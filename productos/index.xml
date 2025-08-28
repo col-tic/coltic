@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>COLTIC</title>
+    <link>/productos/</link>
+    <description>Recent content on COLTIC</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="/productos/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Lora32 V2.1 Esp32 Oled 0.96 Sx1276 915mhz</title>
+      <link>/productos/lilygo-lora/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/productos/lilygo-lora/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

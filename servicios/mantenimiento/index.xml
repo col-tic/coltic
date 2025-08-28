@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mantenimiento on COLTIC</title>
+    <link>/servicios/mantenimiento/</link>
+    <description>Recent content in Mantenimiento on COLTIC</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="/servicios/mantenimiento/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Reparacion de computadoras</title>
+      <link>/servicios/mantenimiento/computadores/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/servicios/mantenimiento/computadores/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Videovigilancia</title>
+      <link>/servicios/mantenimiento/videovigilancia/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/servicios/mantenimiento/videovigilancia/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

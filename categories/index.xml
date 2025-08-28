@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on COLTIC</title>
+    <link>/categories/</link>
+    <description>Recent content in Categories on COLTIC</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 10 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Blockchain</title>
+      <link>/categories/blockchain/</link>
+      <pubDate>Tue, 10 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>/categories/blockchain/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Criptomonedas</title>
+      <link>/categories/criptomonedas/</link>
+      <pubDate>Tue, 10 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>/categories/criptomonedas/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Critica</title>
+      <link>/categories/critica/</link>
+      <pubDate>Tue, 10 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>/categories/critica/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Economia</title>
+      <link>/categories/economia/</link>
+      <pubDate>Tue, 10 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>/categories/economia/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Internet</title>
+      <link>/categories/internet/</link>
+      <pubDate>Tue, 10 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>/categories/internet/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Manifiesto</title>
+      <link>/categories/manifiesto/</link>
+      <pubDate>Tue, 10 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>/categories/manifiesto/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Monero</title>
+      <link>/categories/monero/</link>
+      <pubDate>Tue, 10 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>/categories/monero/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tecnología</title>
+      <link>/categories/tecnolog%C3%ADa/</link>
+      <pubDate>Tue, 10 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>/categories/tecnolog%C3%ADa/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Telecom</title>
+      <link>/categories/telecom/</link>
+      <pubDate>Tue, 10 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>/categories/telecom/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Telecomunicaciones</title>
+      <link>/categories/telecomunicaciones/</link>
+      <pubDate>Tue, 10 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>/categories/telecomunicaciones/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

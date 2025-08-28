@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html><head>
+  <title>COLTIC</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="title" content=" | COLTIC">
+  <meta name="description" content="Web sobre tecnología en Colombia publicada en Arweave.">
+  
+  <meta name="keywords" content="tecnología, Colombia, blockchain, web3, Arweave">
+  <meta name="author" content="Tu nombre o seudónimo">
+  
+  <meta property="og:title" content="">
+  <meta property="og:description" content="">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="/productos/">
+  <meta property="og:image" content="/images/default-share.png">
+  <meta property="og:locale" content="es_CO">
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="">
+  <meta name="twitter:description" content="">
+  <meta name="twitter:image" content="/images/default-share.png">
+  <meta name="twitter:site" content="@tu_usuario">
+  <link rel="stylesheet" href="../css/base.css">
+</head>
+  <body>
+    
+    <div id="preloader">
+      <div class="spinner"></div>
+    </div>
+    <header><div class="header simple">
+  
+
+  <div class="header-bar">
+    <h1><a href="../index.html">COLTIC</a></h1>
+    <nav>
+      <ul>
+        <li><a href="../servicios">Servicios</a></li>
+        <li><a href="../articulos">Artículos</a></li>
+        <li><a href="../productos">Productos</a></li>
+        <li><a href="../nosotros">Nosotros</a></li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+<style>
+   
+  .header {
+    width: 100%;
+    position: relative;
+  }
+
+   
+  .header.portada {
+    height: 500px;
+  }
+  .header.portada img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .header.portada .header-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+   
+  .header.simple {
+    background-color: black;
+    height: auto;
+  }
+  .header.simple li a {
+    color: white;
+  }
+
+   
+  .header-bar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    flex-wrap: wrap;
+  }
+
+  .header-bar h1 a {
+    font-family: 'BebasNeueBold';
+    font-size: 44pt;
+  }
+
+  .header-bar nav ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+    font-family: 'BebasNeueBook';
+    font-size: 30px;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+  }
+
+   
+  @media (max-width: 450px) {
+    .header-bar {
+      justify-content: center;
+      text-align: center;
+    }
+  }
+</style>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const portada = document.getElementById("portada");
+    let index = 1;
+    const total = 3; 
+
+    setInterval(() => {
+      
+      portada.classList.add("fade-out");
+
+      setTimeout(() => {
+        index = index < total ? index + 1 : 1;
+        portada.src = `images/portada-${index}.webp`;
+
+        
+        portada.classList.remove("fade-out");
+      }, 1000); 
+    }, 4000); 
+  });
+</script></header>
+
+    <main id="content">
+    </main>
+    <footer><footer class="footer-grid">
+  <div class="footer-brand">
+    <h2>COLTIC</h2>
+    <p>Tecnología y conocimiento al alcance de todos.</p>
+  </div>
+
+  <div>
+    <div class="horizontal-links">
+      <a class="view-all" href="javascript:void(0)" onclick="copyToClipboard('coltic_soporte@hotmail.com', this)">coltic_soporte@hotmail.com</a>
+      <a class="view-all" href="javascript:void(0)" onclick="copyToClipboard('+573203676984', this)">+57 3203676984</a>
+    </div>
+  </div>
+
+  <div>
+    <div class="social-icons">
+      <a href="#"><img src="../images/twitter-alt.svg" alt="Twitter" /></a>
+      <a href="#"><img src="../images/instagram.svg" alt="Instagram" /></a>
+      <a href="#"><img src="../images/whatsapp.svg" alt="WhatsApp" /></a>
+      <a href="#"><img src="../images/youtube.svg" alt="YouTube" /></a>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding: 40px 20px;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+  }
+
+  .footer-brand h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-brand p {
+    font-size: 0.9rem;
+    color: #bbb;
+  }
+
+  .horizontal-links {
+    display: flex;
+    gap: 12px;
+    flex-direction: column;
+    align-items: center;
+    font-size: 18pt;
+  }
+
+  .view-all {
+    position: relative;
+    border-radius: 20px;
+    color: white;
+    border: 1px solid white;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 0.5rem 1rem;
+    display: block;
+    overflow: hidden;
+    z-index: 1;
+    transition: color 0.3s ease, border 0.3s ease;
+  }
+
+  .view-all::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background-color: rgb(30, 190, 230);
+    z-index: -1;
+    transition: height 0.4s ease;
+  }
+
+  .view-all:hover::before {
+    height: 100%;
+  }
+
+  .view-all:hover {
+    color: black;
+    border-color: rgb(30, 190, 230);
+  }
+
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+  }
+
+  .social-icons img {
+    width: 32px;
+    height: 32px;
+    filter: brightness(0) invert(1);  
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+
+  .social-icons img:hover {
+    transform: scale(1.2);
+    filter: brightness(0) invert(0);  
+  }
+
+   
+  @media (max-width: 768px) {
+    .footer-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+  }
+</style>
+
+<script>
+  function copyToClipboard(text, el) {
+    navigator.clipboard.writeText(text).then(() => {
+      const original = el.textContent;
+      el.textContent = "Copiado";
+      setTimeout(() => {
+        el.textContent = original;
+      }, 1500);
+    });
+  }
+</script>
+</footer>
+  </body>
+</html>

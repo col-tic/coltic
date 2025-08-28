@@ -1,0 +1,1464 @@
+<!DOCTYPE html>
+<html><head>
+	<meta name="generator" content="Hugo 0.148.1">
+  <title>COLTIC</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="title" content="COLTIC">
+  <meta name="description" content="Web sobre tecnología en Colombia publicada en Arweave.">
+  
+  <meta name="keywords" content="tecnología, Colombia, blockchain, web3, Arweave">
+  <meta name="author" content="Tu nombre o seudónimo">
+  
+  <meta property="og:title" content="COLTIC">
+  <meta property="og:description" content="">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="/">
+  <meta property="og:image" content="/images/default-share.png">
+  <meta property="og:locale" content="es_CO">
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="COLTIC">
+  <meta name="twitter:description" content="">
+  <meta name="twitter:image" content="/images/default-share.png">
+  <meta name="twitter:site" content="@tu_usuario">
+  <link rel="stylesheet" href="./css/base.css">
+</head>
+  <body>
+    
+    <div id="preloader">
+      <div class="spinner"></div>
+    </div>
+    <header><div class="header portada">
+  
+  <img id="portada" src="images/portada-1.webp" alt="">
+  
+
+  <div class="header-bar">
+    <h1><a href="./index.html">COLTIC</a></h1>
+    <nav>
+      <ul>
+        <li><a href="./servicios">Servicios</a></li>
+        <li><a href="./articulos">Artículos</a></li>
+        <li><a href="./productos">Productos</a></li>
+        <li><a href="./nosotros">Nosotros</a></li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+<style>
+   
+  .header {
+    width: 100%;
+    position: relative;
+  }
+
+   
+  .header.portada {
+    height: 500px;
+  }
+  .header.portada img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .header.portada .header-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+   
+  .header.simple {
+    background-color: black;
+    height: auto;
+  }
+  .header.simple li a {
+    color: white;
+  }
+
+   
+  .header-bar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    flex-wrap: wrap;
+  }
+
+  .header-bar h1 a {
+    font-family: 'BebasNeueBold';
+    font-size: 44pt;
+  }
+
+  .header-bar nav ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+    font-family: 'BebasNeueBook';
+    font-size: 30px;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+  }
+
+   
+  @media (max-width: 450px) {
+    .header-bar {
+      justify-content: center;
+      text-align: center;
+    }
+  }
+</style>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const portada = document.getElementById("portada");
+    let index = 1;
+    const total = 3; 
+
+    setInterval(() => {
+      
+      portada.classList.add("fade-out");
+
+      setTimeout(() => {
+        index = index < total ? index + 1 : 1;
+        portada.src = `images/portada-${index}.webp`;
+
+        
+        portada.classList.remove("fade-out");
+      }, 1000); 
+    }, 4000); 
+  });
+</script></header>
+
+    <main id="content">
+  
+  <section class="servicios">
+    <h2>Nuestros servicios</h2>
+
+    
+      <div class="tarjeta-horizontal">
+    <img src="./images/electronica.webp" alt="">
+    <div class="contenedor">
+      <div>
+        <h2>Electronica</h2>
+        <ul>
+          
+            <li><a href="./servicios/electronica/dise%C3%B1o-de-circuitos/index.html">Diseño de circuitos</a></li>
+          
+            <li><a href="./servicios/electronica/microcontroladores/index.html">Microcontroladores</a></li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+  <style>
+    .tarjeta-horizontal {
+      display: flex;
+      background-color: #1b1b1b;
+      width: 100%;
+      border-radius: 12px;
+      overflow: hidden;
+      height: 100px;
+      transition: height 0.4s ease;
+      gap: 20px;
+    }
+  
+    .tarjeta-horizontal:hover {
+      height: 250px;
+    }
+  
+    .tarjeta-horizontal img {
+      width: 40%;
+      object-fit: cover;
+    }
+  
+    .tarjeta-horizontal h2 {
+      font-size: 5rem;
+      margin: 0;
+      text-align: center;
+    }
+  
+    .contenedor {
+        display: flex;
+      width: 60%;
+      padding: 1rem;
+      justify-content: center;
+      color: white;
+    }
+  
+    .tarjeta-horizontal ul {
+      display: flex;
+      list-style: none;
+      gap: 30px;
+      justify-content: center;
+      padding: 0;
+      margin-top: 1rem;
+    }
+  
+    .tarjeta-horizontal li {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+    }
+  
+    .tarjeta-horizontal li a {
+      position: relative;
+      display: block;
+      background-color: rgb(44, 44, 44);
+      padding: 10px 20px;
+      color: #8b8b8b;
+      border-radius: 12px;
+      overflow: hidden;
+      z-index: 1;
+      transition: color 0.3s ease;
+      font-size: 1.6rem;
+      text-align: center;
+      text-decoration: none;
+    }
+  
+    .tarjeta-horizontal li a::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 0%;
+      background-color: #00d4ff;
+      z-index: -1;
+      transition: height 0.4s ease;
+      border-radius: 12px;
+    }
+  
+    .tarjeta-horizontal li a:hover::before {
+      height: 100%;
+    }
+  
+    .tarjeta-horizontal li a:hover {
+      color: black;
+    }
+    @media (max-width: 940px) {
+      .tarjeta-horizontal {
+      display: flex;
+      background-color: #1b1b1b;
+      width: 100%;
+      border-radius: 12px;
+      overflow: hidden;
+      height: 250px;
+      transition: height 0.4s ease;
+      gap: 20px;
+    }
+    .tarjeta-horizontal h2 {
+      font-size: 3.5rem;
+    }
+    .tarjeta-horizontal ul {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 0px;
+
+
+    }
+    }
+    @media (max-width: 630px) {
+      .tarjeta-horizontal {
+     flex-direction: column;
+     height: auto;
+    
+    }
+      .tarjeta-horizontal img {
+      width: 100%;
+      object-fit: cover;
+    
+    }
+    .contenedor{
+      width: 100%;
+
+
+    }
+  }
+
+  </style>
+  
+    
+      <div class="tarjeta-horizontal">
+    <img src="./images/mantenimiento.webp" alt="">
+    <div class="contenedor">
+      <div>
+        <h2>Mantenimiento</h2>
+        <ul>
+          
+            <li><a href="./servicios/mantenimiento/computadores/index.html">Reparacion de computadoras</a></li>
+          
+            <li><a href="./servicios/mantenimiento/videovigilancia/index.html">Videovigilancia</a></li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+  <style>
+    .tarjeta-horizontal {
+      display: flex;
+      background-color: #1b1b1b;
+      width: 100%;
+      border-radius: 12px;
+      overflow: hidden;
+      height: 100px;
+      transition: height 0.4s ease;
+      gap: 20px;
+    }
+  
+    .tarjeta-horizontal:hover {
+      height: 250px;
+    }
+  
+    .tarjeta-horizontal img {
+      width: 40%;
+      object-fit: cover;
+    }
+  
+    .tarjeta-horizontal h2 {
+      font-size: 5rem;
+      margin: 0;
+      text-align: center;
+    }
+  
+    .contenedor {
+        display: flex;
+      width: 60%;
+      padding: 1rem;
+      justify-content: center;
+      color: white;
+    }
+  
+    .tarjeta-horizontal ul {
+      display: flex;
+      list-style: none;
+      gap: 30px;
+      justify-content: center;
+      padding: 0;
+      margin-top: 1rem;
+    }
+  
+    .tarjeta-horizontal li {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+    }
+  
+    .tarjeta-horizontal li a {
+      position: relative;
+      display: block;
+      background-color: rgb(44, 44, 44);
+      padding: 10px 20px;
+      color: #8b8b8b;
+      border-radius: 12px;
+      overflow: hidden;
+      z-index: 1;
+      transition: color 0.3s ease;
+      font-size: 1.6rem;
+      text-align: center;
+      text-decoration: none;
+    }
+  
+    .tarjeta-horizontal li a::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 0%;
+      background-color: #00d4ff;
+      z-index: -1;
+      transition: height 0.4s ease;
+      border-radius: 12px;
+    }
+  
+    .tarjeta-horizontal li a:hover::before {
+      height: 100%;
+    }
+  
+    .tarjeta-horizontal li a:hover {
+      color: black;
+    }
+    @media (max-width: 940px) {
+      .tarjeta-horizontal {
+      display: flex;
+      background-color: #1b1b1b;
+      width: 100%;
+      border-radius: 12px;
+      overflow: hidden;
+      height: 250px;
+      transition: height 0.4s ease;
+      gap: 20px;
+    }
+    .tarjeta-horizontal h2 {
+      font-size: 3.5rem;
+    }
+    .tarjeta-horizontal ul {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 0px;
+
+
+    }
+    }
+    @media (max-width: 630px) {
+      .tarjeta-horizontal {
+     flex-direction: column;
+     height: auto;
+    
+    }
+      .tarjeta-horizontal img {
+      width: 100%;
+      object-fit: cover;
+    
+    }
+    .contenedor{
+      width: 100%;
+
+
+    }
+  }
+
+  </style>
+  
+    
+      <div class="tarjeta-horizontal">
+    <img src="./images/programacion.webp" alt="">
+    <div class="contenedor">
+      <div>
+        <h2>Programacion</h2>
+        <ul>
+          
+            <li><a href="./servicios/programacion/webs-apis/index.html">Diseño de Software</a></li>
+          
+            <li><a href="./servicios/programacion/ui-ux/index.html">Diseño Ui/Ux</a></li>
+          
+            <li><a href="./servicios/programacion/frontend/index.html">Front End</a></li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+  <style>
+    .tarjeta-horizontal {
+      display: flex;
+      background-color: #1b1b1b;
+      width: 100%;
+      border-radius: 12px;
+      overflow: hidden;
+      height: 100px;
+      transition: height 0.4s ease;
+      gap: 20px;
+    }
+  
+    .tarjeta-horizontal:hover {
+      height: 250px;
+    }
+  
+    .tarjeta-horizontal img {
+      width: 40%;
+      object-fit: cover;
+    }
+  
+    .tarjeta-horizontal h2 {
+      font-size: 5rem;
+      margin: 0;
+      text-align: center;
+    }
+  
+    .contenedor {
+        display: flex;
+      width: 60%;
+      padding: 1rem;
+      justify-content: center;
+      color: white;
+    }
+  
+    .tarjeta-horizontal ul {
+      display: flex;
+      list-style: none;
+      gap: 30px;
+      justify-content: center;
+      padding: 0;
+      margin-top: 1rem;
+    }
+  
+    .tarjeta-horizontal li {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+    }
+  
+    .tarjeta-horizontal li a {
+      position: relative;
+      display: block;
+      background-color: rgb(44, 44, 44);
+      padding: 10px 20px;
+      color: #8b8b8b;
+      border-radius: 12px;
+      overflow: hidden;
+      z-index: 1;
+      transition: color 0.3s ease;
+      font-size: 1.6rem;
+      text-align: center;
+      text-decoration: none;
+    }
+  
+    .tarjeta-horizontal li a::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 0%;
+      background-color: #00d4ff;
+      z-index: -1;
+      transition: height 0.4s ease;
+      border-radius: 12px;
+    }
+  
+    .tarjeta-horizontal li a:hover::before {
+      height: 100%;
+    }
+  
+    .tarjeta-horizontal li a:hover {
+      color: black;
+    }
+    @media (max-width: 940px) {
+      .tarjeta-horizontal {
+      display: flex;
+      background-color: #1b1b1b;
+      width: 100%;
+      border-radius: 12px;
+      overflow: hidden;
+      height: 250px;
+      transition: height 0.4s ease;
+      gap: 20px;
+    }
+    .tarjeta-horizontal h2 {
+      font-size: 3.5rem;
+    }
+    .tarjeta-horizontal ul {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 0px;
+
+
+    }
+    }
+    @media (max-width: 630px) {
+      .tarjeta-horizontal {
+     flex-direction: column;
+     height: auto;
+    
+    }
+      .tarjeta-horizontal img {
+      width: 100%;
+      object-fit: cover;
+    
+    }
+    .contenedor{
+      width: 100%;
+
+
+    }
+  }
+
+  </style>
+  
+    
+  </section>
+  <section class="articulos">
+    <h2>Artículos y Tutoriales</h2>
+    <div class="gridx3">
+      
+      
+      
+        
+          
+  
+  <a href="./articulos/criptoviaje/index.html"
+     class="tarjeta-vertical"
+     data-categories="Criptomonedas,Blockchain,Tecnología"
+     data-tags="Bitcoin,Descentralización,Libertad,Criptoviaje,Criptomundo">
+
+    
+      <img src="./articulos/criptoviaje/criptoviaje.png" alt="">
+    
+
+    <div class="tarjeta-vertical-contenido">
+      <h2>El Criptoviaje: Primer paso hacia lo desconocido</h2>
+
+      
+    </div>
+  </a>
+
+
+<style>
+  .tarjeta-vertical {
+    background-color: #1b1b1b;
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    color: white;
+    text-decoration: none;
+    display: block;
+  }
+
+  .tarjeta-vertical img {
+    width: 100%;
+    height: 250px;  
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+
+  .tarjeta-vertical img:hover {
+    transform: scale(1.05);
+  }
+
+  .tarjeta-vertical-contenido {
+    padding: 10px;
+    text-align: center;
+  }
+
+  .tarjeta-vertical h2 {
+    margin: 0;
+    font-size: 1.8rem;
+    line-height: 1.3;
+    word-break: break-word;
+  }
+
+   
+  .tarjeta-precio {
+    margin-top: 8px;
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    font-size: 0.95rem;
+    color: #ddd;
+  }
+  .tarjeta-precio .monto {
+    padding: 4px 8px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    background: #262626;
+  }
+
+   
+  .tarjeta-ver-todos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #180757, #130341);
+    height: auto;
+  }
+
+  .tarjeta-ver-todos-contenido {
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+  }
+
+</style>
+
+        
+      
+        
+          
+  
+  <a href="./articulos/vive-coding/index.html"
+     class="tarjeta-vertical"
+     data-categories="Internet,Critica"
+     data-tags="Internet,Redes sociales,Linux,Inteligencia artificial">
+
+    
+      <img src="./articulos/vive-coding/vive.jpeg" alt="">
+    
+
+    <div class="tarjeta-vertical-contenido">
+      <h2>La cruda realidad del vibe coding</h2>
+
+      
+    </div>
+  </a>
+
+
+<style>
+  .tarjeta-vertical {
+    background-color: #1b1b1b;
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    color: white;
+    text-decoration: none;
+    display: block;
+  }
+
+  .tarjeta-vertical img {
+    width: 100%;
+    height: 250px;  
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+
+  .tarjeta-vertical img:hover {
+    transform: scale(1.05);
+  }
+
+  .tarjeta-vertical-contenido {
+    padding: 10px;
+    text-align: center;
+  }
+
+  .tarjeta-vertical h2 {
+    margin: 0;
+    font-size: 1.8rem;
+    line-height: 1.3;
+    word-break: break-word;
+  }
+
+   
+  .tarjeta-precio {
+    margin-top: 8px;
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    font-size: 0.95rem;
+    color: #ddd;
+  }
+  .tarjeta-precio .monto {
+    padding: 4px 8px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    background: #262626;
+  }
+
+   
+  .tarjeta-ver-todos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #180757, #130341);
+    height: auto;
+  }
+
+  .tarjeta-ver-todos-contenido {
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+  }
+
+</style>
+
+        
+      
+        
+          
+  
+  <a href="./articulos/uso-de-grandes-tecnologicas/index.html"
+     class="tarjeta-vertical"
+     data-categories="Internet,Critica"
+     data-tags="Internet,Redes sociales,Linux,Inteligencia artificial">
+
+    
+      <img src="./articulos/uso-de-grandes-tecnologicas/bigtech.jpg" alt="">
+    
+
+    <div class="tarjeta-vertical-contenido">
+      <h2>La triste verdad: Big Tech posee tu vida</h2>
+
+      
+    </div>
+  </a>
+
+
+<style>
+  .tarjeta-vertical {
+    background-color: #1b1b1b;
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    color: white;
+    text-decoration: none;
+    display: block;
+  }
+
+  .tarjeta-vertical img {
+    width: 100%;
+    height: 250px;  
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+
+  .tarjeta-vertical img:hover {
+    transform: scale(1.05);
+  }
+
+  .tarjeta-vertical-contenido {
+    padding: 10px;
+    text-align: center;
+  }
+
+  .tarjeta-vertical h2 {
+    margin: 0;
+    font-size: 1.8rem;
+    line-height: 1.3;
+    word-break: break-word;
+  }
+
+   
+  .tarjeta-precio {
+    margin-top: 8px;
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    font-size: 0.95rem;
+    color: #ddd;
+  }
+  .tarjeta-precio .monto {
+    padding: 4px 8px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    background: #262626;
+  }
+
+   
+  .tarjeta-ver-todos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #180757, #130341);
+    height: auto;
+  }
+
+  .tarjeta-ver-todos-contenido {
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+  }
+
+</style>
+
+        
+      
+        
+          
+  
+  <a href="./articulos/manifiesto-coltic/index.html"
+     class="tarjeta-vertical"
+     data-categories="Telecomunicaciones,Telecom,Manifiesto"
+     data-tags="Descentralización,Libertad,Telecomunicaciones">
+
+    
+      <img src="./articulos/manifiesto-coltic/bitmap.png" alt="">
+    
+
+    <div class="tarjeta-vertical-contenido">
+      <h2>Manifiesto COLTIC, Apretura juvenil</h2>
+
+      
+    </div>
+  </a>
+
+
+<style>
+  .tarjeta-vertical {
+    background-color: #1b1b1b;
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    color: white;
+    text-decoration: none;
+    display: block;
+  }
+
+  .tarjeta-vertical img {
+    width: 100%;
+    height: 250px;  
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+
+  .tarjeta-vertical img:hover {
+    transform: scale(1.05);
+  }
+
+  .tarjeta-vertical-contenido {
+    padding: 10px;
+    text-align: center;
+  }
+
+  .tarjeta-vertical h2 {
+    margin: 0;
+    font-size: 1.8rem;
+    line-height: 1.3;
+    word-break: break-word;
+  }
+
+   
+  .tarjeta-precio {
+    margin-top: 8px;
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    font-size: 0.95rem;
+    color: #ddd;
+  }
+  .tarjeta-precio .monto {
+    padding: 4px 8px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    background: #262626;
+  }
+
+   
+  .tarjeta-ver-todos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #180757, #130341);
+    height: auto;
+  }
+
+  .tarjeta-ver-todos-contenido {
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+  }
+
+</style>
+
+        
+      
+        
+          
+  
+  <a href="./articulos/por-la-libertad/index.html"
+     class="tarjeta-vertical"
+     data-categories="Monero,Criptomonedas,Economia"
+     data-tags="Anonimato,Privacidad,Remesas,Teletrabajo,Compras">
+
+    
+      <img src="./articulos/por-la-libertad/la-libertad.jpeg" alt="">
+    
+
+    <div class="tarjeta-vertical-contenido">
+      <h2>Manifiesto por la privacidad: un ecosistema para la libertad digital</h2>
+
+      
+    </div>
+  </a>
+
+
+<style>
+  .tarjeta-vertical {
+    background-color: #1b1b1b;
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    color: white;
+    text-decoration: none;
+    display: block;
+  }
+
+  .tarjeta-vertical img {
+    width: 100%;
+    height: 250px;  
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+
+  .tarjeta-vertical img:hover {
+    transform: scale(1.05);
+  }
+
+  .tarjeta-vertical-contenido {
+    padding: 10px;
+    text-align: center;
+  }
+
+  .tarjeta-vertical h2 {
+    margin: 0;
+    font-size: 1.8rem;
+    line-height: 1.3;
+    word-break: break-word;
+  }
+
+   
+  .tarjeta-precio {
+    margin-top: 8px;
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    font-size: 0.95rem;
+    color: #ddd;
+  }
+  .tarjeta-precio .monto {
+    padding: 4px 8px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    background: #262626;
+  }
+
+   
+  .tarjeta-ver-todos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #180757, #130341);
+    height: auto;
+  }
+
+  .tarjeta-ver-todos-contenido {
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+  }
+
+</style>
+
+        
+      
+        
+          
+  
+  <a href="./articulos/index.html" class="tarjeta-vertical tarjeta-ver-todos">
+    <h2 class="tarjeta-ver-todos-contenido">Ver todos</h2>
+  </a>
+
+
+<style>
+  .tarjeta-vertical {
+    background-color: #1b1b1b;
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    color: white;
+    text-decoration: none;
+    display: block;
+  }
+
+  .tarjeta-vertical img {
+    width: 100%;
+    height: 250px;  
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+
+  .tarjeta-vertical img:hover {
+    transform: scale(1.05);
+  }
+
+  .tarjeta-vertical-contenido {
+    padding: 10px;
+    text-align: center;
+  }
+
+  .tarjeta-vertical h2 {
+    margin: 0;
+    font-size: 1.8rem;
+    line-height: 1.3;
+    word-break: break-word;
+  }
+
+   
+  .tarjeta-precio {
+    margin-top: 8px;
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    font-size: 0.95rem;
+    color: #ddd;
+  }
+  .tarjeta-precio .monto {
+    padding: 4px 8px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    background: #262626;
+  }
+
+   
+  .tarjeta-ver-todos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #180757, #130341);
+    height: auto;
+  }
+
+  .tarjeta-ver-todos-contenido {
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+  }
+
+</style>
+
+        
+      
+        
+      
+    </div>
+    
+  </section>
+    <div class="banda1">
+    <div class="texto1"></div>
+</div>
+<div class="banda2">
+    <div class="texto2"></div>
+</div>
+<section class="productos">
+    <div class="gridx3">
+    
+        
+  
+  <a href="./productos/lilygo-lora/index.html"
+     class="tarjeta-vertical"
+     
+     >
+
+    
+      <img src="./productos/lilygo-lora/lilygo-915-lora.webp" alt="">
+    
+
+    <div class="tarjeta-vertical-contenido">
+      <h2>Lora32 V2.1 Esp32 Oled 0.96 Sx1276 915mhz</h2>
+
+      
+        <div class="tarjeta-precio">
+          <span class="monto cop">COP: 120</span>
+          <span class="monto usd">USD: 30</span>
+        </div>
+      
+    </div>
+  </a>
+
+
+<style>
+  .tarjeta-vertical {
+    background-color: #1b1b1b;
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    color: white;
+    text-decoration: none;
+    display: block;
+  }
+
+  .tarjeta-vertical img {
+    width: 100%;
+    height: 250px;  
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+
+  .tarjeta-vertical img:hover {
+    transform: scale(1.05);
+  }
+
+  .tarjeta-vertical-contenido {
+    padding: 10px;
+    text-align: center;
+  }
+
+  .tarjeta-vertical h2 {
+    margin: 0;
+    font-size: 1.8rem;
+    line-height: 1.3;
+    word-break: break-word;
+  }
+
+   
+  .tarjeta-precio {
+    margin-top: 8px;
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    font-size: 0.95rem;
+    color: #ddd;
+  }
+  .tarjeta-precio .monto {
+    padding: 4px 8px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    background: #262626;
+  }
+
+   
+  .tarjeta-ver-todos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #180757, #130341);
+    height: auto;
+  }
+
+  .tarjeta-ver-todos-contenido {
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+  }
+
+</style>
+
+    
+    </div>
+</section>
+
+
+<style>
+    .banda1, .banda2 {
+        width: 100%;
+        height: 80px;
+        overflow: hidden; 
+        display: flex;
+        align-items: center;
+        font-size: 2.5rem;
+        font-family: 'BebasNeueBold', sans-serif;
+    }
+
+     
+    .banda1 {
+        background-color: rgb(38, 0, 255);
+        color: white;
+        transform: rotate(5deg);
+        transform-origin: center center;
+        margin-top: 50px;
+    }
+
+     
+    .banda2 {
+        background-color: rgb(38, 0, 255);
+        color: white;
+        transform: rotate(-5deg);
+        transform-origin: center center;
+        margin-top: -80px;
+        margin-bottom: 40px;
+    }
+
+     
+    .texto1 {
+        display: inline-block;
+        white-space: nowrap;
+        animation: moverIzq linear infinite;
+    }
+
+     
+    .texto2 {
+        display: inline-block;
+        white-space: nowrap;
+        animation: moverDer linear infinite;
+    }
+    .productos{
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      align-items: center;
+    }
+
+    @keyframes moverIzq {
+        from { transform: translateX(0); }
+        to { transform: translateX(-50%); }
+    }
+
+    @keyframes moverDer {
+        from { transform: translateX(-50%); }
+        to { transform: translateX(0); }
+    }
+</style>
+
+<script>
+    const palabra = "PRODUCTOS - ";
+    const velocidadBanda1 = 45; 
+    const velocidadBanda2 = 45; 
+
+    
+    const texto1 = document.querySelector('.texto1');
+    const repetido1 = palabra.repeat(30);
+    texto1.textContent = repetido1 + repetido1;
+    texto1.style.animationDuration = velocidadBanda1 + 's';
+
+    
+    const texto2 = document.querySelector('.texto2');
+    const repetido2 = palabra.repeat(30);
+    texto2.textContent = repetido2 + repetido2;
+    texto2.style.animationDuration = velocidadBanda2 + 's';
+</script>
+
+  <style>
+    .servicios {
+      display: flex;
+      flex-direction: column;
+      background-color: black;
+      color: white;
+      padding: 20px;
+      align-items: center;
+      gap: 20px;
+    }
+    .articulos{
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      align-items: center;
+    }
+  </style>
+
+    </main>
+    <footer><footer class="footer-grid">
+  <div class="footer-brand">
+    <h2>COLTIC</h2>
+    <p>Tecnología y conocimiento al alcance de todos.</p>
+  </div>
+
+  <div>
+    <div class="horizontal-links">
+      <a class="view-all" href="javascript:void(0)" onclick="copyToClipboard('coltic_soporte@hotmail.com', this)">coltic_soporte@hotmail.com</a>
+      <a class="view-all" href="javascript:void(0)" onclick="copyToClipboard('+573203676984', this)">+57 3203676984</a>
+    </div>
+  </div>
+
+  <div>
+    <div class="social-icons">
+      <a href="#"><img src="./images/twitter-alt.svg" alt="Twitter" /></a>
+      <a href="#"><img src="./images/instagram.svg" alt="Instagram" /></a>
+      <a href="#"><img src="./images/whatsapp.svg" alt="WhatsApp" /></a>
+      <a href="#"><img src="./images/youtube.svg" alt="YouTube" /></a>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding: 40px 20px;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+  }
+
+  .footer-brand h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-brand p {
+    font-size: 0.9rem;
+    color: #bbb;
+  }
+
+  .horizontal-links {
+    display: flex;
+    gap: 12px;
+    flex-direction: column;
+    align-items: center;
+    font-size: 18pt;
+  }
+
+  .view-all {
+    position: relative;
+    border-radius: 20px;
+    color: white;
+    border: 1px solid white;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 0.5rem 1rem;
+    display: block;
+    overflow: hidden;
+    z-index: 1;
+    transition: color 0.3s ease, border 0.3s ease;
+  }
+
+  .view-all::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background-color: rgb(30, 190, 230);
+    z-index: -1;
+    transition: height 0.4s ease;
+  }
+
+  .view-all:hover::before {
+    height: 100%;
+  }
+
+  .view-all:hover {
+    color: black;
+    border-color: rgb(30, 190, 230);
+  }
+
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+  }
+
+  .social-icons img {
+    width: 32px;
+    height: 32px;
+    filter: brightness(0) invert(1);  
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+
+  .social-icons img:hover {
+    transform: scale(1.2);
+    filter: brightness(0) invert(0);  
+  }
+
+   
+  @media (max-width: 768px) {
+    .footer-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+  }
+</style>
+
+<script>
+  function copyToClipboard(text, el) {
+    navigator.clipboard.writeText(text).then(() => {
+      const original = el.textContent;
+      el.textContent = "Copiado";
+      setTimeout(() => {
+        el.textContent = original;
+      }, 1500);
+    });
+  }
+</script>
+</footer>
+  </body>
+</html>

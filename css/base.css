@@ -1,0 +1,91 @@
+/* styles/reset.scss */
+
+/* Box-sizing y márgenes generales */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* styles/variables.css */
+
+/* FONTS */
+
+  @font-face {
+    font-family: 'BebasNeueBold';
+    src: url('../fonts/BebasNeueBold.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'BebasNeueLight';
+    src: url('../fonts/BebasNeueLight.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'BebasNeueBook';
+    src: url('../fonts/BebasNeueBook.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'poppins';
+    src: url('../fonts/poppins-regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
+/* Altura base del documento */
+body{
+  color: rgb(0, 0, 0);
+}
+
+/* LETTERS */
+h1 {  
+  font-family: 'BebasNeueBold';
+  font-size: 2.5rem;
+}
+h2{
+  font-family: 'BebasNeueBold';
+  font-size: 2rem;
+}
+h3{
+  font-family: 'BebasNeueBook';
+  font-size: 1.5rem;
+}
+p{
+  font-family: 'poppins';
+  font-size: 1.1rem;
+
+
+}
+a{
+  font-family: 'BebasNeueBook';
+  text-decoration: none;
+  font-size: 1.4rem;
+
+}
+.gridx3 {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+ul {
+  list-style-position: inside; /* Mueve las viñetas dentro */
+  padding-left: 0; /* Ajusta si no quieres tanto margen extra */
+}
+@media (max-width: 940px) {
+  .gridx3 {
+    grid-template-columns: repeat(2, 1fr);
+
+  }
+}
+@media (max-width: 630px) {
+  .gridx3 {
+    grid-template-columns: repeat(1, 1fr);
+
+  }
+}
+
