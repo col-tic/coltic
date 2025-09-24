@@ -1,0 +1,63 @@
+<section class="productos">
+  <div class="band">
+      <div class="marquee">
+        <div class="marquee-content">
+          <span>PRODUCTOS — PRODUCTOS — PRODUCTOS — PRODUCTOS — PRODUCTOS — PRODUCTOS — PRODUCTOS — PRODUCTOS — </span>
+          <span>PRODUCTOS — PRODUCTOS — PRODUCTOS — PRODUCTOS — PRODUCTOS — PRODUCTOS — PRODUCTOS — PRODUCTOS — </span>
+        </div>
+      </div>
+  </div>
+
+  <div class="gridx3">
+    {{ range (site.GetPage "section" "productos").Pages }}
+        {{ partial "tarjeta-vertical.html" . }}
+    {{ end }}
+  </div>
+</section>
+
+<style>
+.band {
+  position: relative;
+  width: 100vw;                /* ocupa todo el ancho de la ventana */
+  left: 50%;                   /* lo desplazas al centro */
+  transform: translateX(-50%); /* lo centras respecto al viewport */
+  overflow: hidden;
+  background-color: #000;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  margin: 0 0 30px 0;          /* mantiene separación abajo */
+}
+
+
+.marquee {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.marquee-content {
+  display: inline-flex;
+  animation: scroll-left 15s linear infinite;
+  font-size: 3rem;
+  font-family: 'Orbitron', sans-serif;
+  color: #06b6d4; /* Azul futurista */
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.productos {
+  display: flex;
+  flex-direction: column;
+
+}
+</style>

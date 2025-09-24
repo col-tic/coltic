@@ -1,0 +1,167 @@
+<h1> <a href="/">COLTIC</a></h1>
+<nav>
+  <ul>
+    <li><a href="/servicios">Servicios</a></li>
+    <li><a href="/articulos">Artículos</a></li>
+    <li><a href="/productos">Productos</a></li>
+    <li><a href="/nosotros">Nosotros</a></li>
+<li class="nav-cart">
+  <a href="#" id="cart-button" aria-haspopup="dialog" aria-expanded="false" title="Ver carrito">
+    Carrito
+    <span id="cart-badge" class="cart-badge visually-hidden" aria-hidden="true">0</span>
+  </a>
+</li>
+
+  </ul>
+</nav>
+<div class="search-cta">
+  <input type="text" placeholder="Buscar...">
+  <button class="cta">Explorar</button>
+</div>
+
+
+<style>
+/* ===== HEADER ===== */
+header{
+position:fixed;
+top:0;left:0;width:100%;
+backdrop-filter:blur(2px);
+border-bottom:1px solid rgba(255,255,255,0.05);
+display:flex;justify-content:space-between;align-items:center;
+padding:18px 40px;
+gap:20px;
+z-index:100;
+flex-wrap:wrap; /* ✅ permite que no se corte en pantallas pequeñas */
+box-sizing:border-box;
+animation:headerAssemble 0.8s cubic-bezier(0.19,1,0.22,1) forwards;
+animation-delay:2.2s;
+}
+@keyframes headerAssemble{
+0%{opacity:0;transform:scale(1.15) translateY(-40px);filter:blur(20px);}
+70%{opacity:1;transform:scale(0.97) translateY(8px);filter:blur(6px);}
+100%{opacity:1;transform:scale(1) translateY(0);filter:blur(0);}
+}
+
+header h1{
+font-family: 'Orbitron', sans-serif;
+font-weight:900;
+font-size:2.2rem;
+letter-spacing:2px;
+color:#e5e7eb;
+text-transform:uppercase;
+margin:0;
+flex-shrink:0;
+
+opacity:0;
+animation:fadeInUp 0.6s ease forwards;
+animation-delay:2.6s;
+}
+
+nav ul{
+display:flex;
+gap:32px;
+list-style:none;
+margin:0;
+padding:0;
+flex-wrap:wrap;
+justify-content:center;
+}
+nav ul li a{
+font-weight:500;
+font-size:0.95rem;
+color:#cbd5e1;
+text-decoration:none;
+opacity:0;transform:translateY(-15px);
+transition:color 0.3s ease, transform 0.2s ease;
+animation:fadeInUp 0.5s ease forwards;
+}
+nav ul li:nth-child(1) a{animation-delay:2.9s}
+nav ul li:nth-child(2) a{animation-delay:3.1s}
+nav ul li:nth-child(3) a{animation-delay:3.3s}
+nav ul li:nth-child(4) a{animation-delay:3.5s}
+nav ul li a:hover{color:#06b6d4;transform:translateY(-2px)}
+
+/* === Search CTA (ajustado) === */
+/* === Search CTA ajustado para que no se pase === */
+.search-cta{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  flex:1;               /* ocupa espacio sobrante */
+  min-width:220px;      /* no se rompe en pantallas chicas */
+  max-width:400px;      /* ✅ limita la barra en pantallas grandes */
+}
+.search-cta input{
+  flex:1;               /* crece al máximo dentro del contenedor */
+  padding:8px 14px;
+  border-radius:20px;
+  border:none;
+  outline:none;
+  background:#1f2937;
+  color:#fff;
+  font-size:0.9rem;
+
+  opacity:0;transform:translateY(-15px);
+  animation:fadeInUp 0.5s ease forwards;
+  animation-delay:3.7s;
+
+  min-width:120px;      /* evita que se haga demasiado pequeño */
+  max-width:calc(100% - 100px); /* deja espacio para el botón */
+}
+.search-cta input::placeholder{color:#9ca3af;}
+
+.cta{
+  flex-shrink:0; /* botón mantiene tamaño fijo */
+  padding:9px 20px;
+  border:none;
+  border-radius:22px;
+  background:linear-gradient(90deg,#06b6d4,#7c3aed);
+  color:white;
+  font-weight:600;
+  cursor:pointer;
+  transition:0.3s ease;
+
+  opacity:0;transform:translateY(-15px);
+  animation:fadeInUp 0.5s ease forwards;
+  animation-delay:3.9s;
+}
+.cta:hover{
+  transform:scale(1.07);
+  box-shadow:0 0 14px #06b6d4,0 0 28px #7c3aed;
+}
+@media (max-width: 940px) {
+  header {
+    flex-direction: column;     /* ✅ fuerza columna */
+    align-items: center;        /* centrar todos los elementos */
+    row-gap: 12px;              /* espacio entre filas */
+    padding: 16px 20px;         /* menos padding en móviles */
+  }
+}
+  @media (max-width: 440px){
+  nav ul{
+    gap:16px;
+  }
+}
+
+@keyframes fadeInUp{
+0%{opacity:0;transform:translateY(-15px)}
+100%{opacity:1;transform:translateY(0)}
+}
+</style>
+<script>
+  let lastScrollTop = 0;
+  const header = document.querySelector('header');
+  
+  window.addEventListener('scroll', () => {
+    let st = window.scrollY || document.documentElement.scrollTop;
+    if(st > lastScrollTop){
+      // Scrolling down → ocultar header
+      header.style.top = "-220px";
+    } else {
+      // Scrolling up → mostrar header
+      header.style.top = "0";
+    }
+    lastScrollTop = st <= 0 ? 0 : st; // evita valores negativos
+  });
+  </script>
+  

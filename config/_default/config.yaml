@@ -1,0 +1,21 @@
+baseURL: "/"
+title: "COLTIC"
+theme: "coltic"
+relativeURLs: true
+canonifyURLs: false
+
+contentDir: "kontent"
+buildFuture: true
+
+params:
+  description: "Web sobre tecnología en Colombia publicada en Arweave."
+  keywords: ["tecnología", "Colombia", "blockchain", "web3", "Arweave"]
+  author: "Tu nombre o seudónimo"
+
+summaryLength: 70
+enableRobotsTXT: true
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+

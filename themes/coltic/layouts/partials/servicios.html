@@ -1,0 +1,158 @@
+<section class="servicios">
+  <h2 class="titulos-generales">Nuestros servicios</h2>
+  <ul class="ul-servicios">
+    {{ range (site.GetPage "section" "servicios").Sections }}
+    <div class="tarjeta-horizontal">
+      <div class="imagen-wrapper-2">
+        <img src="../images/{{ .Title | urlize}}.webp" alt="Imagen de {{ .Title }}">
+      </div>
+    
+      <div class="contenedor">
+        <h2>{{ .Title }}</h2>
+        <p class="descripcion">Pequeña descripción de la herramienta o recurso, destacando su función principal y utilidad.</p>
+    
+        <div class="acciones">
+          {{ range .Pages }}
+            <a class="button" href="{{ .Permalink }}">{{ .Title }}</a>
+          {{ end }}
+        </div>
+    
+        <div class="kpi-wrapper">
+          <div class="kpi">
+            <span class="label">Uptime</span>
+            <strong>99.99%</strong>
+          </div>
+          <div class="kpi">
+            <span class="label">Sites</span>
+            <strong>24</strong>
+          </div>
+          <div class="kpi">
+            <span class="label">Stack</span>
+            <strong>Node • Go • Docker</strong>
+          </div>
+          <div class="kpi">
+            <span class="label">Latency</span>
+            <strong>34ms</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <style>
+    
+    .tarjeta-horizontal {
+      position: relative;
+      display: flex;
+      width: 100%;
+      min-height: 250px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--card-glass);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+    
+      /* Borde azul definido */
+      border: 1px solid rgba(0,208,255,0.4);
+    }
+    
+    
+    .imagen-wrapper-2 {
+      flex: 0 0 35%;
+      overflow: hidden;
+    }
+    
+    .imagen-wrapper-2 img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .contenedor {
+      flex: 1;
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      color: var(--text-main);
+      gap: 12px;
+    }
+    
+    .tarjeta-horizontal h2 {
+      font-size: clamp(24px, 2.5vw, 32px);
+      font-weight: 700;
+      color: var(--accent-blue);
+      margin: 0;
+    }
+    
+    .descripcion {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+    
+    .acciones {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    
+    .button {
+      padding: 6px 14px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-main);
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 999px;
+      text-decoration: none;
+    }
+    
+    .kpi-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 16px;
+      padding: 12px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.02);
+    }
+    
+    .kpi {
+      display: flex;
+      flex-direction: column;
+      min-width: 90px;
+    }
+    
+    .kpi .label {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 2px;
+    }
+    
+    .kpi strong {
+      font-size: 16px;
+      color: var(--text-main);
+      font-weight: 700;
+    }
+    
+    @media (max-width: 768px) {
+      .tarjeta-horizontal {
+        flex-direction: column;
+        min-height: auto;
+      }
+    
+      .imagen-wrapper {
+        width: 100%;
+        height: 200px;
+      }
+    
+      .contenedor {
+        padding: 1.5rem;
+      }
+    }
+    </style>
+    
+    {{ end }}
+  </ul>
+</section>

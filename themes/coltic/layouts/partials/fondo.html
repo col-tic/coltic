@@ -1,0 +1,94 @@
+<canvas id="bg"></canvas>
+
+<style>
+  canvas {
+    position: fixed;
+    inset: 0;
+    display: block;
+    z-index: -1; /* 🔹 queda detrás del contenido */
+  }
+</style>
+
+<script>
+(function() {
+  const canvas = document.getElementById('bg');
+  const ctx = canvas.getContext('2d');
+  let w = canvas.width = innerWidth;
+  let h = canvas.height = innerHeight;
+
+  /* 🔧 Configuración básica */
+  const SPAWN_INTERVAL = 7000; // cada cuántos ms aparece una línea
+  const LINE_SPEED = 0.12;     // velocidad (px/frame)
+  const TRAIL_LENGTH = 25;     // largo del rastro
+  const FADE_AMOUNT = 0.07;    // qué tan rápido se difumina
+
+  class Line {
+    constructor(x, y) {
+      this.x = x;
+      this.y = y;
+      this.vy = LINE_SPEED + Math.random() * 0.08;
+      this.points = [];
+      this.maxTrail = TRAIL_LENGTH;
+    }
+    step() {
+      this.y += this.vy;
+      this.points.push({x: this.x, y: this.y});
+      if (this.points.length > this.maxTrail) this.points.shift();
+    }
+    draw(ctx) {
+      for (let i = 0; i < this.points.length - 1; i++) {
+        const p = this.points[i];
+        const q = this.points[i+1];
+        const alpha = (i / this.points.length) * 0.05; // tenue
+        ctx.beginPath();
+        ctx.moveTo(p.x, p.y);
+        ctx.lineTo(q.x, q.y);
+        ctx.strokeStyle = `rgba(100,140,180,${alpha})`; // azul oscuro
+        ctx.lineWidth = 0.6;
+        ctx.stroke();
+      }
+    }
+  }
+
+  const lines = [];
+  let lastSpawn = 0;
+
+  function spawnLine() {
+    const x = Math.random() * w;
+    const y = Math.random() * h * 0.4; // arranca en la parte alta
+    lines.push(new Line(x, y));
+  }
+
+  function animate(t) {
+    ctx.fillStyle = `rgba(15,23,36,${FADE_AMOUNT})`;
+    ctx.fillRect(0,0,w,h);
+
+    if (t - lastSpawn > SPAWN_INTERVAL) {
+      spawnLine();
+      lastSpawn = t;
+    }
+
+    for (let i = 0; i < lines.length; i++) {
+      const L = lines[i];
+      L.step();
+      L.draw(ctx);
+      if (L.y > h + 50) {
+        lines.splice(i,1);
+        i--;
+      }
+    }
+
+    requestAnimationFrame(animate);
+  }
+
+  /* 👇 arranca solo cuando el DOM esté cargado */
+  window.addEventListener("load", () => {
+    requestAnimationFrame(animate);
+  });
+
+  window.addEventListener("resize", () => {
+    w = canvas.width = innerWidth;
+    h = canvas.height = innerHeight;
+  });
+})();
+</script>

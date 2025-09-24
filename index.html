@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>El Criptoviaje: Primer paso hacia lo desconocido — Tech Blog</title>
+
+  <!-- Tipografía -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <meta name="description" content="Crónica ficticia sobre el primer paso de un usuario en el mundo de las criptomonedas.">
+  <style>
+    :root{
+      --bg: #0f1724;
+      --muted: rgba(226,232,240,0.65);
+      --glass: rgba(255,255,255,0.03);
+      --accent-grad: linear-gradient(90deg,#06b6d4,#7c3aed);
+      --card: rgba(255,255,255,0.025);
+      --radius: 14px;
+      --max-width: 1100px;
+      --glass-border: rgba(255,255,255,0.06);
+    }
+
+    html,body{height:100%;margin:0}
+    body {
+      font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: radial-gradient(circle at 10% 10%, #0b1220 0%, var(--bg) 40%);
+      color: #e6eef6;
+      -webkit-font-smoothing:antialiased;
+      line-height:1.55;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* Header */
+    header.site-header {
+      position: fixed; top:0; left:0; right:0;
+      display:flex; align-items:center; justify-content:space-between;
+      padding:14px 28px; z-index:60;
+      background: linear-gradient(180deg, rgba(15,23,36,0.55), rgba(15,23,36,0.35));
+      border-bottom: 1px solid var(--glass-border);
+      backdrop-filter: blur(8px);
+    }
+    .brand { display:flex; align-items:center; gap:14px }
+    .logo {
+      width:46px;height:46px;border-radius:12px;display:grid;place-items:center;
+      font-weight:800;font-size:16px;color:#061025;
+      background: var(--accent-grad);
+    }
+    .brand .title .main { font-weight:700; font-size:15px; color:#fff }
+    .brand .title .sub { font-size:12px; color:var(--muted) }
+
+    nav.main-nav { display:flex; gap:14px; align-items:center }
+    nav.main-nav a { color:var(--muted); font-weight:600; font-size:14px; padding:8px 10px; border-radius:10px; }
+    nav.main-nav a:hover { color:#fff; background: rgba(255,255,255,0.02) }
+
+    main.container { max-width: var(--max-width); margin:110px auto 60px; padding: 0 20px;
+      display:grid; grid-template-columns: 1fr 320px; gap:32px; }
+
+    /* Post */
+    article.post {
+      background: linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.01));
+      border:1px solid var(--glass-border);
+      border-radius: var(--radius);
+      padding:22px;
+      box-shadow: 0 20px 50px rgba(2,6,23,0.6);
+    }
+    .post .eyebrow { display:flex; gap:10px; align-items:center; margin-bottom:12px }
+    .post .category {
+      font-weight:700; font-size:12px; padding:6px 10px; border-radius:999px;
+      background: var(--accent-grad); color:#061025;
+    }
+    .post .meta { color:var(--muted); font-size:0.95rem }
+    .post h1 {
+      margin:0 0 12px; font-size: clamp(26px, 4vw, 40px); font-weight:800;
+      background: var(--accent-grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .post .lead { color:var(--muted); margin-bottom:18px }
+
+    .cover { margin: 14px 0; border-radius:12px; overflow:hidden; border:1px solid rgba(255,255,255,0.04); }
+    .cover img { width:100%; height:360px; object-fit:cover }
+
+    .post-content { margin-top:12px; color:#dfe9f8; font-size:1rem }
+    .post-content p { margin:0 0 16px; color: #cfe1f7; line-height:1.7 }
+    .post-content h2 { margin:26px 0 10px; color:#fff; font-size:1.3rem }
+    .post-content blockquote { padding:12px 16px; border-left:3px solid rgba(124,58,237,0.6);
+      background:rgba(255,255,255,0.02); border-radius:8px; margin:16px 0; color:#dbeafe }
+
+    .post-footer { display:flex; justify-content:space-between; align-items:center; margin-top:22px; flex-wrap:wrap; gap:12px }
+    .author { display:flex; gap:12px; align-items:center }
+    .author .avatar { width:44px;height:44px;border-radius:999px;background:var(--accent-grad);
+      display:grid;place-items:center;color:#061025;font-weight:800 }
+    .tags { display:flex; gap:8px; flex-wrap:wrap }
+    .tags .tag { font-size:0.85rem; padding:6px 10px; border-radius:999px;
+      background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.04); color:var(--muted) }
+
+    /* Sidebar */
+    aside.sidebar {
+      border-radius:12px; padding:16px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.01));
+      border:1px solid var(--glass-border);
+      backdrop-filter: blur(8px);
+    }
+    .sidebar .panel-title { font-weight:700; color:#fff; margin-bottom:10px }
+    .related { display:flex; flex-direction:column; gap:12px }
+    .related .item { display:flex; gap:10px; align-items:center; padding:8px;
+      border-radius:10px; background:var(--card); border:1px solid rgba(255,255,255,0.03) }
+    .related img { width:64px; height:48px; object-fit:cover; border-radius:8px }
+    .related .meta { color:var(--muted); font-size:0.9rem }
+
+    footer.small { margin-top:40px; text-align:center; color:var(--muted); font-size:0.9rem }
+
+    /* Responsive */
+    @media (max-width:1000px) {
+      main.container { grid-template-columns: 1fr; }
+      .cover img { height:220px }
+      aside.sidebar { order:2; margin-top:20px }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="brand">
+      <div class="logo">TK</div>
+      <div class="title">
+        <div class="main">TechKore</div>
+        <div class="sub">Design • Dev • Deploy</div>
+      </div>
+    </div>
+    <nav class="main-nav">
+      <a href="#">Inicio</a>
+      <a href="#">Blog</a>
+      <a href="#">Contacto</a>
+    </nav>
+  </header>
+
+  <!-- Contenido -->
+  <main class="container">
+    <article class="post">
+      <div class="eyebrow">
+        <div class="category">Criptomonedas</div>
+        <div class="meta">Publicado: <time datetime="2025-06-10">Jun 10, 2025</time></div>
+      </div>
+      <h1>El Criptoviaje: Primer paso hacia lo desconocido</h1>
+      <p class="lead">Un relato sobre la promesa, el riesgo y la aventura de las criptomonedas.</p>
+
+      <div class="cover">
+        <img src="https://via.placeholder.com/1200x640.png?text=Criptoviaje+Imagen" alt="Ilustración Criptoviaje">
+      </div>
+
+      <div class="post-content">
+        <p>Los inicios fueron modestos. En una cafetería rutinaria, el primer intercambio de claves se sintió más como pasar una nota que como iniciar una revolución financiera.</p>
+        <h2>¿Por qué importa?</h2>
+        <p>Las criptomonedas ofrecen un nuevo modelo de confianza y propiedad...</p>
+        <blockquote>“Invertir sin entender es como viajar sin mapa.”</blockquote>
+        <h2>Riesgos y señales</h2>
+        <p>Antes de comprar, verifica historial del proyecto, equipo y actividad...</p>
+        <h2>Conclusión</h2>
+        <p>El Criptoviaje no es sólo tecnología; es una mezcla de código, cultura y comportamiento colectivo.</p>
+      </div>
+
+      <div class="post-footer">
+        <div class="author">
+          <div class="avatar">FO</div>
+          <div>
+            <div class="name">Fabian Orozco</div>
+            <div class="meta">Investigador</div>
+          </div>
+        </div>
+        <div class="tags">
+          <span class="tag">Bitcoin</span>
+          <span class="tag">Descentralización</span>
+          <span class="tag">Libertad</span>
+        </div>
+      </div>
+    </article>
+
+    <aside class="sidebar">
+      <div class="panel-title">Artículos relacionados</div>
+      <div class="related">
+        <a class="item" href="#">
+          <img src="https://via.placeholder.com/120x80.png?text=Rel+1" alt="">
+          <div>
+            <div style="font-weight:700">Blockchain y privacidad</div>
+            <div class="meta">Jun 1, 2025 · Tecnología</div>
+          </div>
+        </a>
+        <a class="item" href="#">
+          <img src="https://via.placeholder.com/120x80.png?text=Rel+2" alt="">
+          <div>
+            <div style="font-weight:700">¿Qué es un wallet?</div>
+            <div class="meta">May 27, 2025 · Guías</div>
+          </div>
+        </a>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="small">© 2025 TechKore · Todos los derechos reservados</footer>
+</body>
+</html>

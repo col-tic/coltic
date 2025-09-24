@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Freso — Helados artesanales</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#f0f9ff;
+      --card:#ffffff;
+      --accent:#fca5a5; /* rosa suave */
+      --accent-2:#f43f5e; /* frambuesa */
+      --text:#111827;
+      --muted:#6b7280;
+      --radius:14px;
+      --maxw:1100px;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(180deg,var(--bg),#ffffff);color:var(--text);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+    .container{max-width:var(--maxw);margin:0 auto;padding:36px 20px}
+
+    /* Fade-in animation */
+    .fade-in{opacity:0;transform:translateY(20px);animation:fadeInUp 0.6s ease forwards}
+    @keyframes fadeInUp{
+      to{opacity:1;transform:translateY(0)}
+    }
+    .delay-1{animation-delay:0.2s}
+    .delay-2{animation-delay:0.4s}
+    .delay-3{animation-delay:0.6s}
+    .delay-4{animation-delay:0.8s}
+    .delay-5{animation-delay:1s}
+
+    /* Header */
+    header{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:56px;height:56px;border-radius:50%;overflow:hidden;box-shadow:0 6px 20px rgba(15,23,42,0.1);}
+    .logo img{width:100%;height:100%;object-fit:cover}
+    .brand h1{margin:0;font-size:1.1rem;letter-spacing:0.2px;color:var(--accent-2)}
+    nav a{margin-left:18px;color:var(--muted);text-decoration:none;font-weight:600}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;margin-top:18px}
+    .hero-card{background:var(--card);border-radius:var(--radius);padding:28px;box-shadow:0 10px 30px rgba(15,23,42,0.06)}
+    .hero-visual{position:relative;border-radius:12px;overflow:hidden;height:380px;background:#eee}
+    .hero-visual img{width:100%;height:100%;object-fit:cover;display:block}
+    .kicker{display:inline-block;background:linear-gradient(90deg,var(--accent),var(--accent-2));color:white;padding:6px 12px;border-radius:999px;font-weight:700;font-size:12px}
+    .lead{font-size:1.8rem;margin:14px 0 8px;line-height:1.1}
+    .desc{color:var(--muted);margin-bottom:18px}
+    .actions{display:flex;gap:12px}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:12px;text-decoration:none;font-weight:700;transition:transform 0.2s ease}
+    .btn:hover{transform:scale(1.05)}
+    .btn-primary{background:linear-gradient(90deg,var(--accent-2),var(--accent));color:#fff}
+    .btn-outline{border:1px solid rgba(15,23,42,0.1);background:transparent;color:var(--text)}
+
+    /* Prices */
+    .prices{display:grid;grid-template-columns:repeat(1,1fr);gap:12px;margin-top:12px}
+    .price-item{display:flex;justify-content:space-between;align-items:center;padding:12px 14px;border-radius:10px;background:#fff0f5;border:1px solid rgba(15,23,42,0.05)}
+    .price-item h4{margin:0;font-weight:600}
+    .price-item p{margin:0;color:var(--muted);font-size:0.92rem}
+
+    /* Menu grid */
+    .menu{margin-top:42px}
+    .menu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:var(--card);border-radius:14px;padding:14px;box-shadow:0 8px 26px rgba(15,23,42,0.04);display:flex;flex-direction:column;gap:12px;transition:transform 0.2s ease}
+    .card:hover{transform:translateY(-6px)}
+    .card img{width:100%;height:160px;object-fit:cover;border-radius:10px}
+    .meta{display:flex;justify-content:space-between;align-items:center}
+    .meta h3{margin:0;font-size:1.05rem;color:var(--accent-2)}
+    .meta .price{font-weight:700}
+    .tag{font-size:12px;color:var(--muted)}
+
+    /* Info strip */
+    .info-strip{margin-top:36px;background:linear-gradient(90deg,#fff0f5,#ffffff);padding:18px;border-radius:12px;border:1px solid rgba(15,23,42,0.04);display:flex;gap:18px;align-items:center}
+
+    /* Footer */
+    footer{margin-top:40px;padding:28px 0;color:var(--muted);font-size:0.95rem}
+
+    /* Responsive */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr;}
+      .menu-grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:600px){
+      .menu-grid{grid-template-columns:1fr}
+      header{flex-direction:column;align-items:flex-start;gap:12px}
+      .hero-visual{height:260px}
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header class="fade-in delay-1">
+      <div class="brand">
+        <div class="logo"><img src="https://images.unsplash.com/photo-1505250469679-203ad9ced0cb?q=80&w=800&auto=format&fit=crop" alt="logo helado"></div>
+        <div>
+          <h1>Freso</h1>
+          <div style="font-size:12px;color:var(--muted)">Helados artesanales</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#sabores">Sabores</a>
+        <a href="#precios">Precios</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero fade-in delay-2">
+        <div class="hero-card">
+          <span class="kicker">Nuevo</span>
+          <h2 class="lead">Helados artesanales, simples y memorables.</h2>
+          <p class="desc">Recetas frescas con frutas naturales, cremosidad única y un diseño minimalista que enamora. ¡Un placer en cada bocado!</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="#precios">Ver precios</a>
+            <a class="btn btn-outline" href="#contacto">Pedir ahora</a>
+          </div>
+
+          <div id="precios" style="margin-top:18px">
+            <div class="prices">
+              <div class="price-item fade-in delay-3"><div><h4>Cono clásico</h4><p>Una bola</p></div><div class="price">$3.500</div></div>
+              <div class="price-item fade-in delay-4"><div><h4>Vaso mediano</h4><p>2 sabores</p></div><div class="price">$6.500</div></div>
+              <div class="price-item fade-in delay-5"><div><h4>Vaso grande</h4><p>3 sabores</p></div><div class="price">$9.000</div></div>
+            </div>
+          </div>
+
+        </div>
+
+        <aside class="fade-in delay-3">
+          <div class="hero-visual">
+            <img src="https://images.unsplash.com/photo-1532634896-26909d0d4b6a?q=80&w=1600&auto=format&fit=crop" alt="helado premium">
+          </div>
+        </aside>
+      </section>
+
+      <section id="sabores" class="menu fade-in delay-4">
+        <h2>Nuestros sabores</h2>
+        <div class="menu-grid" style="margin-top:18px">
+          <article class="card fade-in delay-2">
+            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1200&auto=format&fit=crop" alt="vainilla">
+            <div class="meta"><h3>Vainilla Bourbon</h3><div class="price">$3.500</div></div>
+            <div class="tag">Clásico — cremoso</div>
+          </article>
+
+          <article class="card fade-in delay-3">
+            <img src="https://images.unsplash.com/photo-1524594154906-5f3b5c6a1f9e?q=80&w=1200&auto=format&fit=crop" alt="fresa">
+            <div class="meta"><h3>Fresa natural</h3><div class="price">$3.900</div></div>
+            <div class="tag">Fruta fresca</div>
+          </article>
+
+          <article class="card fade-in delay-4">
+            <img src="https://images.unsplash.com/photo-1544378730-9f5a4a0b6c9c?q=80&w=1200&auto=format&fit=crop" alt="chocolate">
+            <div class="meta"><h3>Chocolate oscuro</h3><div class="price">$4.200</div></div>
+            <div class="tag">Cacao 70%</div>
+          </article>
+        </div>
+      </section>
+
+      <section class="info-strip fade-in delay-5">
+        <div style="flex:1">
+          <strong>Abierto hoy</strong>
+          <div style="color:var(--muted);margin-top:6px">Lun - Dom • 11:00 - 21:00</div>
+        </div>
+        <div style="flex:2">
+          <div style="font-weight:700">Pide por WhatsApp</div>
+          <div style="color:var(--muted);margin-top:6px">Envíos en 30-45 min • Retiro en local</div>
+        </div>
+        <div style="text-align:right">
+          <a href="#contacto" class="btn btn-primary">Enviar mensaje</a>
+        </div>
+      </section>
+
+      <section id="contacto" class="fade-in delay-5" style="margin-top:28px;display:grid;grid-template-columns:1fr 320px;gap:18px;align-items:start">
+        <div style="background:var(--card);padding:18px;border-radius:12px;box-shadow:0 10px 30px rgba(15,23,42,0.04)">
+          <h3 style="margin-top:0">Contacto & ubicación</h3>
+          <p style="color:var(--muted);margin-top:6px">Calle 123 #45-67 • Centro • Ciudad</p>
+          <p style="margin-top:12px">Tel: <strong>+57 300 123 4567</strong></p>
+          <p style="margin-top:6px">WhatsApp: <strong>+57 300 123 4567</strong></p>
+          <p style="margin-top:12px;color:var(--muted)">Instagram @freso_helados</p>
+        </div>
+
+        <aside style="background:var(--card);padding:18px;border-radius:12px;box-shadow:0 10px 30px rgba(15,23,42,0.04)">
+          <h4 style="margin:0 0 8px 0">Reserva / Pedidos</h4>
+          <form action="#" onsubmit="event.preventDefault();alert('Gracias — nos contactamos pronto!')">
+            <input required style="width:100%;padding:10px;border-radius:8px;border:1px solid rgba(15,23,42,0.1);margin-bottom:8px" placeholder="Tu nombre">
+            <input required style="width:100%;padding:10px;border-radius:8px;border:1px solid rgba(15,23,42,0.1);margin-bottom:8px" placeholder="+57 300 ...">
+            <textarea style="width:100%;padding:10px;border-radius:8px;border:1px solid rgba(15,23,42,0.1);margin-bottom:10px" placeholder="¿Qué te gustaría pedir?"></textarea>
+            <button class="btn btn-primary" style="width:100%;border-radius:10px">Enviar</button>
+          </form>
+        </aside>
+      </section>
+
+    </main>
+
+    <footer class="fade-in delay-5">
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
+        <div>© 2025 Freso — Helados artesanales</div>
+        <div style="color:var(--muted)">Diseño minimalista • Fotos: Unsplash</div>
+      </div>
+    </footer>
+
+  </div>
+
+</body>
+</html>

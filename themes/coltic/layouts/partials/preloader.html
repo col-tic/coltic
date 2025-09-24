@@ -1,0 +1,76 @@
+<!-- PRELOADER -->
+<div id="preloader">
+    <h1>
+      <span>C</span><span>O</span><span>L</span><span>T</span><span>I</span><span>C</span>
+    </h1>
+  </div>
+  
+  <style>
+    /* === PRELOADER === */
+    #preloader {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: #0f1724;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 2000;
+    }
+  
+    #preloader h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 4rem;
+      font-weight: 900;
+      letter-spacing: 0.5rem;
+      color: #333;
+      display: flex;
+      gap: 10px;
+    }
+  
+    #preloader span {
+      color: #444;
+      animation: glow 1s ease-in-out infinite alternate;
+    }
+  
+    #preloader span:nth-child(1) { animation-delay: 0s; }
+    #preloader span:nth-child(2) { animation-delay: 0.1s; }
+    #preloader span:nth-child(3) { animation-delay: 0.2s; }
+    #preloader span:nth-child(4) { animation-delay: 0.3s; }
+    #preloader span:nth-child(5) { animation-delay: 0.4s; }
+    #preloader span:nth-child(6) { animation-delay: 0.5s; }
+  
+    @keyframes glow {
+      from { color: #333; }
+      to { color: #f3f4f6; }
+    }
+  
+    .loaded #preloader {
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.6s ease, visibility 0.6s ease;
+    }
+  </style>
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const minTime = 2000; // 2s mínimo
+      const maxTime = 6000; // 6s máximo
+      const start = Date.now();
+  
+      const hidePreloader = () => {
+        const elapsed = Date.now() - start;
+        const remaining = minTime - elapsed;
+        setTimeout(() => {
+          document.body.classList.add("loaded");
+        }, Math.max(remaining, 0));
+      };
+  
+      // Forzar ocultar en 6s máximo
+      setTimeout(hidePreloader, maxTime);
+  
+      // Cuando todos los recursos estén listos
+      window.addEventListener("load", hidePreloader);
+    });
+  </script>
+  

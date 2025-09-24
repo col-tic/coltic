@@ -1,0 +1,32 @@
+[
+  {
+    "nombre": "Simplified Privacy",
+    "rol": "Colaborador ocasional",
+    "reputacion": 5,
+    "redes_sociales": {
+      "website": "https://simplifiedprivacy.com/",
+      "nostr": null
+    }
+  },
+  {
+    "nombre": "Fabian Orozco",
+    "rol": "Redactor",
+    "reputacion": 5,
+    "redes_sociales": {
+      "instagram": "instagram.com/coltic-software"
+    }
+  },
+  {
+    "nombre": "Xataka",
+    "rol": "Website Tecnologica",
+    "reputacion": 4,
+    "redes_sociales": {
+      "website": "www.xataka.com/"
+    }
+  },
+  {
+    "nombre": "Eduardo Calderon",
+    "rol": "Colaborador ocasional - Ingeniero Electromecanico - Administrador de empresas",
+    "reputacion": 5
+  }
+]

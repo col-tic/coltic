@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+  {{- partial "head.html" . -}}
+  <!-- Fuente Orbitron -->
+
+  <body>
+    {{- partial "preloader.html" . -}}
+
+    <header>
+      {{- partial "header.html" . -}}
+    </header>
+
+    <main id="content">
+      {{- block "main" . }}{{- end }}
+      {{ partial "fondo.html" . }}
+
+    </main>
+
+    <footer>
+      {{- partial "footer.html" . -}}
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Profesor de Natación Profesional</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: 'Roboto', sans-serif;
+      color: #222;
+      background: #f5faff;
+      overflow-x: hidden;
+    }
+
+    /* Hero con fondo de piscina minimalista */
+    header {
+      position: relative;
+      height: 90vh;
+      background: url('https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+    }
+    header::after {
+      content: "";
+      position: absolute;
+      top:0; left:0; width:100%; height:100%;
+      background: rgba(0, 0, 0, 0.4);
+    }
+    header .inner {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      padding: 0 1rem;
+      animation: fadeInUp 1s ease-out forwards;
+      opacity: 0;
+    }
+    header .inner h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    header .inner p {
+      font-size: 1.3rem;
+      margin-bottom: 2rem;
+      font-weight: 500;
+    }
+    header .inner a {
+      display: inline-block;
+      padding: 0.8rem 2rem;
+      background: rgba(0, 194, 255, 0.85);
+      color: white;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: background 0.3s, transform 0.3s;
+    }
+    header .inner a:hover {
+      background: rgba(0, 132, 175, 0.85);
+      transform: scale(1.05);
+    }
+
+    section {
+      padding: 4rem 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    h2 {
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #0a3c60;
+      position: relative;
+    }
+    h2::after {
+      content: "";
+      display: block;
+      width: 80px;
+      height: 3px;
+      background-color: #00c2ff;
+      margin: 1rem auto 0;
+      border-radius: 2px;
+    }
+
+    .bio {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: center;
+    }
+    .bio img {
+      flex: 1 1 300px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+    .bio div {
+      flex: 1 1 400px;
+    }
+    .bio div p {
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+      line-height: 1.5;
+      color: #444;
+    }
+
+    .experience-list {
+      list-style: none;
+      max-width: 600px;
+      margin: auto;
+      font-size: 1.1rem;
+      color: #444;
+    }
+    .experience-list li {
+      margin-bottom: 1rem;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+    .experience-list li::before {
+      content: \"\\2022\";
+      position: absolute;
+      left: 0;
+      color: #00c2ff;
+      font-size: 1.3rem;
+      line-height: 1;
+      top:0.15rem;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+      gap: 1.5rem;
+    }
+    .gallery img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 12px;
+      transition: transform 0.4s, box-shadow 0.4s;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .contact {
+      text-align: center;
+      font-size: 1.1rem;
+      color: #333;
+    }
+    .contact a {
+      color: #00c2ff;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .contact a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      header .inner h1 { font-size: 2.4rem; }
+      header .inner p { font-size: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="inner">
+      <h1>Juan Pérez — Profesor de Natación Profesional</h1>
+      <p>Transformo tu relación con el agua: técnica, confianza y salud en cada brazada.</p>
+      <a href="#bio">Ver más</a>
+    </div>
+  </header>
+
+  <section id="bio">
+    <h2>Quién Soy</h2>
+    <div class="bio">
+      <img src="https://images.unsplash.com/photo-1598970434795-0c54fe7c0645?auto=format&fit=crop&w=900&q=80" alt="Profesor nadando">
+      <div>
+        <p>Con más de 10 años dedicados a la enseñanza de la natación, he asistido a alumnos de todas las edades y niveles. Mi enfoque está en la técnica, la seguridad y la progresión personalizada en el agua.</p>
+        <p>He sido certificado por entidades nacionales de deportes acuáticos, he trabajado en clubes olímpicos y he dirigido programas de rehabilitación acuática.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Experiencia Profesional</h2>
+    <ul class="experience-list">
+      <li>Certificación oficial de Federación de Natación</li>
+      <li>15+ años entrenando desde principiantes hasta nadadores competitivos</li>
+      <li>Clases individuales y grupales especializadas</li>
+      <li>Planes personalizados para mejorar técnica, resistencia y bienestar</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Galería Acuática</h2>
+    <div class="gallery">
+      <img src="https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=900&q=80" alt="Piscina profesional bajo el agua">
+      <img src="https://images.unsplash.com/photo-1508609349937-5ec4ae374ebf?auto=format&fit=crop&w=900&q=80" alt="Reflejo agua piscina">
+      <img src="https://images.unsplash.com/photo-1571731956672-fd1c1a0f3c34?auto=format&fit=crop&w=900&q=80" alt="Superficie del agua tranquila">
+      <img src="https://images.unsplash.com/photo-1530982011821-2c2f8fcd5c9b?auto=format&fit=crop&w=900&q=80" alt="Piscina minimalista moderna">
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contacto</h2>
+    <div class="contact">
+      <p>Si deseas mejorar tu natación, técnica o simplemente disfrutar más del agua, hablemos.</p>
+      <p>Email: <a href="mailto:juan.perez@natacion.com">juan.perez@natacion.com</a></p>
+      <p>WhatsApp: <a href="https://wa.me/573001112233" target="_blank">+57 300 111 2233</a></p>
+    </div>
+  </section>
+</body>
+</html>

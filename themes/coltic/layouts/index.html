@@ -1,0 +1,72 @@
+{{ define "main" }}
+{{ partial "servicios.html" . }}
+    <div id="carrito-root"></div>
+
+  <section class="articulos">
+    <h2 class="titulos-generales">Artículos y Tutoriales</h2>
+    <div class="gridx3">
+      {{ $section := site.GetPage "section" "articulos" }}
+      {{ $pages := $section.Pages }}
+      {{ range first 6 $pages }}
+        {{ partial "tarjeta-vertical.html" . }}
+      {{ end }}
+    </div>
+
+    <!-- Botón Ver más -->
+    {{ if gt (len $pages) 6 }}
+      <div>
+        <a class="special-btn" href="{{ $section.RelPermalink }}">Ver más</a>
+      </div>
+    {{ end }}
+  </section>
+
+  {{ partial "productos.html" . }}
+
+  <style>
+    .servicios, .articulos {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+    .ul-servicios{
+      width: 100%;
+      gap: 20px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .special-btn {
+      display: flex;
+      margin-top: 10px;
+      padding: 9px 20px;
+      border: none;
+      border-radius: 22px;
+      background: linear-gradient(90deg, #06b6d4, #7c3aed);
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      opacity: 0;
+      transform: translateY(-15px);
+      animation: fadeInUp 0.5s ease forwards;
+      animation-delay: 3.9s;
+    }
+
+    /* Hover */
+    .special-btn:hover {
+      transform: scale(1.07);
+      box-shadow: 0 0 14px #06b6d4, 0 0 28px #7c3aed;
+    }
+
+    /* Animación entrada */
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+{{ end }}

@@ -1,0 +1,129 @@
+{{ define "main" }}
+<div class="articulo">
+    {{ partial "sidebar.html" . }}
+    <div>
+        <section class="articulos">
+            <h2 id="titulo-articulos">Últimos artículos</h2>
+            <div class="gridx3">
+              {{ range (site.GetPage "section" "articulos").Pages }}
+                {{ partial "tarjeta-vertical.html" . }}
+              {{ end }}
+            </div>
+        </section>
+    </div>
+</div>
+
+<style>
+    #titulo-articulos{
+        display: inline-block;
+  font-size: 0.75rem;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.06);
+  color: #a5f3fc;
+  margin-bottom: 1rem;
+    }
+/* --------- Layout principal --------- */
+.articulo{
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 32px;
+}
+
+.eyebrow {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.articulo-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.articulo-card h2 {
+  margin: 0 0 12px;
+  font-size: clamp(26px, 4vw, 40px);
+  font-weight: 800;
+  background: var(--accent-grad);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.articulo-card img {
+  width: 100%;
+  height: auto;
+  max-height: 480px;
+  object-fit: cover;
+  border-radius: 14px;
+  margin: 18px 0;
+}
+
+/* --------- Contenido --------- */
+.articulo-contenido {
+  padding: 12px 0;
+  line-height: 1.6;
+  color: #e2e8f0;
+}
+
+.articulo-contenido h3 {
+  margin: 20px 0 12px;
+  font-size: 1.3rem;
+  color: #fff;
+}
+
+/* --------- Características --------- */
+.caracteristicas {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.caracteristicas p {
+  font-size: 0.75rem;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.06);
+  color: #a5f3fc;
+}
+
+/* --------- Artículos relacionados --------- */
+.articulos-relacionados {
+  text-align: center;
+}
+
+.articulos-relacionados .titulo-relacionados {
+  display: inline-block;
+  font-size: 0.75rem;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.06);
+  color: #a5f3fc;
+  margin-bottom: 1rem;
+}
+
+.articulos-relacionados ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 16px;
+}
+@media (max-width:780px) {
+  .articulo{
+  display: flex;
+  flex-direction: column-reverse; /* fila invertida horizontalmente */
+  /* o flex-direction: column-reverse; para columna invertida */
+
+
+
+  }
+}
+
+</style>
+
+{{ end }}

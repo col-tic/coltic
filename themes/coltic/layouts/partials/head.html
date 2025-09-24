@@ -1,0 +1,28 @@
+<head>
+  <title>{{ if .IsHome }}{{ .Site.Title }}{{ else if .Title }}{{ .Title }} | {{ .Site.Title }}{{ else }}{{ .Site.Title }}{{ end }}</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}">
+  {{ with .Params.description }}<meta name="description" content="{{ . }}">{{ else }}<meta name="description" content="{{ .Site.Params.description }}">{{ end }}
+  {{ $keywords := .Params.keywords | default .Site.Params.keywords }}
+  <meta name="keywords" content="{{ delimit $keywords ", " }}">
+  <meta name="author" content="{{ .Site.Params.author }}">
+  <!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
+  <meta property="og:title" content="{{ .Title }}">
+  <meta property="og:description" content="{{ with .Params.description }}{{ . }}{{ else }}{{ .Summary }}{{ end }}">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="{{ .Permalink }}">
+  <meta property="og:image" content="{{ with .Params.image }}{{ . | absURL }}{{ else }}{{ "images/default-share.png" | absURL }}{{ end }}">
+  <meta property="og:locale" content="es_CO">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ .Title }}">
+  <meta name="twitter:description" content="{{ with .Params.description }}{{ . }}{{ else }}{{ .Summary }}{{ end }}">
+  <meta name="twitter:image" content="{{ with .Params.image }}{{ . | absURL }}{{ else }}{{ "images/default-share.png" | absURL }}{{ end }}">
+  <meta name="twitter:site" content="@tu_usuario">
+  <link rel="stylesheet" href="{{ "css/base.css" | relURL }}">
+  <link rel="icon" href="{{ "favicon.ico" | relURL }}" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
+
+</head>
+  

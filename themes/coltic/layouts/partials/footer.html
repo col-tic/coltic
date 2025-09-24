@@ -1,0 +1,126 @@
+<section class="contacto">
+  <h2 class="titulos-generales">Contacto</h2>
+
+  <div class="grid-contacto">
+    <div class="card-contacto">
+      <h3>Session</h3>
+      <h4>5e190204b5c9f1656dc83e599353dc351b1a754eb395e2c81842e86f03770c977</h4>
+    </div>
+    <div class="card-contacto">
+      <h3>XMPP</h3>
+      <h4>coltic@yax.im</h4>
+    </div>
+    <div class="card-contacto">
+      <h3>Matrix</h3>
+      <h4>—</h4>
+    </div>
+    <div class="card-contacto">
+      <h3>Simple-x</h3>
+      <h4>—</h4>
+    </div>
+
+    <a class="card-contacto" href="#">Soporte WhatsApp</a>
+    <a class="card-contacto" href="#">Instagram</a>
+    <a class="card-contacto" href="#">X (Twitter)</a>
+    <a class="card-contacto" href="#">YouTube</a>
+  </div>
+
+  <div class="footer-brand">
+    <h4>COLTIC</h4>
+    <h5>Tecnología y conocimiento al alcance de todos.</h5>
+  </div>
+</section>
+
+<style>
+
+
+.contacto {
+  display: flex;
+  flex-direction: column;
+  padding: 40px 20px;
+  align-items: center;
+  color: var(--text-main);
+  text-transform: uppercase;
+  text-align: center;
+  gap: 30px;
+  background: linear-gradient(135deg, rgba(0,0,0,0.95), rgba(0,0,0,0.7));
+}
+
+
+.grid-contacto {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.card-contacto {
+  background: var(--card-glass);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 20px;
+  color: var(--text-main);
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  cursor: pointer;
+  transition: transform 0.2s, border-color 0.2s, background 0.2s;
+}
+
+.card-contacto:hover {
+  transform: translateY(-3px);
+  background: rgba(0, 208, 255, 0.12);
+  border-color: rgba(0, 208, 255, 0.6);
+  color: var(--accent-blue);
+}
+
+.card-contacto h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.card-contacto h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--accent-blue);
+  word-break: break-all;
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-brand h4 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.footer-brand h5 {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--text-muted);
+}
+
+/* Responsive */
+@media (max-width: 940px) {
+  .grid-contacto {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 630px) {
+  .grid-contacto {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 400px) {
+  .grid-contacto {
+    grid-template-columns: 1fr;
+  }
+}
+</style>

@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<style>
+  :root {
+    --bg: #0a0f1a; /* azul noche muy oscuro */
+  }
+  html, body {
+    height: 100%;
+    margin: 0;
+    background: var(--bg);
+    overflow: hidden;
+  }
+  canvas {
+    position: fixed;
+    inset: 0;
+    display: block;
+    z-index: 0;
+  }
+</style>
+</head>
+<body>
+<canvas id="bg"></canvas>
+
+<script>
+const canvas = document.getElementById('bg');
+const ctx = canvas.getContext('2d');
+let w = canvas.width = innerWidth;
+let h = canvas.height = innerHeight;
+
+/* Configuración ultradiscreta */
+const SPAWN_INTERVAL = 8000; // cada 8s aparece una línea
+const LINE_SPEED = 0.15;     // velocidad lentísima
+const TRAIL_LENGTH = 20;     // rastro muy corto
+const FADE_AMOUNT = 0.08;    // se borra más rápido
+
+class Line {
+  constructor(x, y) {
+    this.x = x;
+    this.y = y;
+    this.vy = LINE_SPEED + Math.random() * 0.1;
+    this.points = [];
+    this.maxTrail = TRAIL_LENGTH;
+  }
+  step() {
+    this.y += this.vy;
+    this.points.push({x: this.x, y: this.y});
+    if (this.points.length > this.maxTrail) this.points.shift();
+  }
+  draw(ctx) {
+    for (let i = 0; i < this.points.length - 1; i++) {
+      const p = this.points[i];
+      const q = this.points[i+1];
+      const alpha = (i / this.points.length) * 0.05; // casi invisible
+      ctx.beginPath();
+      ctx.moveTo(p.x, p.y);
+      ctx.lineTo(q.x, q.y);
+      ctx.strokeStyle = `rgba(120,160,200,${alpha})`; // azul gris tenue
+      ctx.lineWidth = 0.5;
+      ctx.stroke();
+    }
+  }
+}
+
+const lines = [];
+let lastSpawn = 0;
+
+function spawnLine() {
+  const x = Math.random() * w;
+  const y = Math.random() * h * 0.5; // aparece en mitad superior
+  lines.push(new Line(x, y));
+}
+
+function animate(t) {
+  ctx.fillStyle = `rgba(10,15,26,${FADE_AMOUNT})`;
+  ctx.fillRect(0,0,w,h);
+
+  if (t - lastSpawn > SPAWN_INTERVAL) {
+    spawnLine();
+    lastSpawn = t;
+  }
+
+  for (let i = 0; i < lines.length; i++) {
+    const L = lines[i];
+    L.step();
+    L.draw(ctx);
+    if (L.y > h + 50) {
+      lines.splice(i,1);
+      i--;
+    }
+  }
+
+  requestAnimationFrame(animate);
+}
+requestAnimationFrame(animate);
+
+window.addEventListener("resize", () => {
+  w = canvas.width = innerWidth;
+  h = canvas.height = innerHeight;
+});
+</script>
+</body>
+</html>

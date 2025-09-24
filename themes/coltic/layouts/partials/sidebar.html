@@ -1,0 +1,83 @@
+<section class="sidebar">
+  <ul>
+    <li>
+      <a href="/posts/" data-title="Últimos artículos">Todos</a>
+    </li>
+    {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
+      <li>
+        <a href="{{ "/categories/" | relLangURL }}{{ $name | urlize }}" data-title="{{ $name }}">
+          {{ $name }}
+          <span class="count">{{ len $taxonomy }}</span>
+        </a>
+      </li>
+    {{ end }}
+  </ul>
+</section>
+
+<style>
+/* -------- Sidebar container -------- */
+.sidebar {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+
+/* -------- List -------- */
+.sidebar ul {
+  padding-left: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* -------- Links -------- */
+.sidebar li a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.06);
+  color: #a5f3fc;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.sidebar li a:hover {
+  color: #00d0ff;
+  background: rgba(0, 208, 255, 0.1);
+}
+
+/* -------- Count badge -------- */
+.sidebar li .count {
+  background: rgba(0, 208, 255, 0.2);
+  color: #00d0ff;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+@media (max-width:780px) {
+  .sidebar ul {
+    display: grid;
+
+grid-template-columns: 1fr 1fr;
+
+
+
+  }
+}
+
+@media (max-width: 500px) {
+  .sidebar ul {
+    grid-template-columns: 1fr;
+  }
+}
+</style>

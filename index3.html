@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Header COLTIC Futurista</title>
+  <!-- Orbitron -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{
+      background:#0f1724;
+      font-family:"Segoe UI",Tahoma,Geneva,Verdana,sans-serif;
+      color:#f3f4f6;
+      height:100vh;
+      overflow:hidden; /* Bloquear scroll mientras carga */
+    }
+
+    /* ===== PRELOADER ===== */
+    #preloader {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: #0f1724;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 2000;
+    }
+
+    #preloader h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 4rem;
+      font-weight: 900;
+      letter-spacing: 0.5rem;
+      color: #333;
+      display: flex;
+      gap: 10px;
+    }
+
+    #preloader span {
+      color: #444;
+      animation: glow 1s ease-in-out infinite alternate;
+    }
+
+    #preloader span:nth-child(1) { animation-delay: 0s; }
+    #preloader span:nth-child(2) { animation-delay: 0.1s; }
+    #preloader span:nth-child(3) { animation-delay: 0.2s; }
+    #preloader span:nth-child(4) { animation-delay: 0.3s; }
+    #preloader span:nth-child(5) { animation-delay: 0.4s; }
+    #preloader span:nth-child(6) { animation-delay: 0.5s; }
+
+    @keyframes glow {
+      from { color: #333; }
+      to { color: #f3f4f6; }
+    }
+
+    .loaded #preloader {
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.6s ease, visibility 0.6s ease;
+    }
+
+    /* ===== HEADER ===== */
+    header{
+      position:fixed;
+      top:0;left:0;width:100%;
+      backdrop-filter:blur(14px);
+      background:rgba(15,23,36,0.72);
+      border-bottom:1px solid rgba(255,255,255,0.05);
+      display:flex;justify-content:space-between;align-items:center;
+      padding:18px 60px;
+      z-index:100;
+      opacity:0;transform:scale(1.15) translateY(-40px);filter:blur(20px);
+      animation:headerAssemble 0.8s cubic-bezier(0.19,1,0.22,1) forwards;
+      animation-delay:2.2s; /* Se ajusta con el preloader */
+    }
+    @keyframes headerAssemble{
+      0%{opacity:0;transform:scale(1.15) translateY(-40px);filter:blur(20px);}
+      70%{opacity:1;transform:scale(0.97) translateY(8px);filter:blur(6px);}
+      100%{opacity:1;transform:scale(1) translateY(0);filter:blur(0);}
+    }
+
+    header h1{
+      font-family: 'Orbitron', sans-serif;
+      font-weight:900;
+      font-size:2.4rem;
+      letter-spacing:2px;
+      color:#e5e7eb;
+      text-transform:uppercase;
+      opacity:0;
+      animation:fadeInUp 0.6s ease forwards;
+      animation-delay:2.6s;
+    }
+
+    nav ul{display:flex;gap:36px;list-style:none}
+    nav ul li a{
+      font-weight:500;font-size:0.95rem;
+      color:#cbd5e1;text-decoration:none;
+      opacity:0;transform:translateY(-15px);
+      transition:color 0.3s ease, transform 0.2s ease;
+      animation:fadeInUp 0.5s ease forwards;
+    }
+    nav ul li:nth-child(1) a{animation-delay:2.9s}
+    nav ul li:nth-child(2) a{animation-delay:3.1s}
+    nav ul li:nth-child(3) a{animation-delay:3.3s}
+    nav ul li:nth-child(4) a{animation-delay:3.5s}
+    nav ul li a:hover{color:#06b6d4;transform:translateY(-2px)}
+
+    .search-cta{display:flex;align-items:center;gap:14px}
+    .search-cta input{
+      padding:7px 12px;border-radius:20px;border:none;outline:none;
+      background:#1f2937;color:#fff;font-size:0.9rem;
+      opacity:0;transform:translateY(-15px);
+      animation:fadeInUp 0.5s ease forwards;
+      animation-delay:3.7s;
+    }
+
+    .cta{
+      padding:9px 20px;border:none;border-radius:22px;
+      background:linear-gradient(90deg,#06b6d4,#7c3aed);
+      color:white;font-weight:600;cursor:pointer;
+      transition:0.3s ease;
+      opacity:0;transform:translateY(-15px);
+      animation:fadeInUp 0.5s ease forwards;
+      animation-delay:3.9s;
+    }
+    .cta:hover{
+      transform:scale(1.07);
+      box-shadow:0 0 14px #06b6d4,0 0 28px #7c3aed;
+    }
+
+    @keyframes fadeInUp{
+      0%{opacity:0;transform:translateY(-15px)}
+      100%{opacity:1;transform:translateY(0)}
+    }
+  </style>
+</head>
+<body>
+  <!-- PRELOADER -->
+  <div id="preloader">
+    <h1>
+      <span>C</span><span>O</span><span>L</span><span>T</span><span>I</span><span>C</span>
+    </h1>
+  </div>
+
+  <!-- HEADER -->
+  <header>
+    <h1>COLTIC</h1>
+    <nav>
+      <ul>
+        <li><a href="#">Servicios</a></li>
+        <li><a href="#">Artículos</a></li>
+        <li><a href="#">Productos</a></li>
+        <li><a href="#">Nosotros</a></li>
+      </ul>
+    </nav>
+    <div class="search-cta">
+      <input type="text" placeholder="Buscar...">
+      <button class="cta">Explorar</button>
+    </div>
+  </header>
+
+  <script>
+    window.addEventListener("load", () => {
+      const preloader = document.getElementById("preloader");
+      const minTime = 2000; // 2s mínimo
+      const maxTime = 6000; // 6s máximo
+      const start = Date.now();
+
+      const hidePreloader = () => {
+        const elapsed = Date.now() - start;
+        const remaining = minTime - elapsed;
+        setTimeout(() => {
+          document.body.classList.add("loaded");
+        }, Math.max(remaining, 0));
+      };
+
+      // Si tarda demasiado, forzar en 6s
+      setTimeout(hidePreloader, maxTime);
+      hidePreloader();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,294 @@
+{{ define "main" }}
+<h1>{{.RelPermalink}}</h1>
+<div class="producto-view">
+<div id="cart-overlay" class="cart-overlay hidden">
+  <div class="cart-modal">
+    <button id="cart-close" class="cart-close">&times;</button>
+    <h2>Carrito de compras</h2>
+    <button id="clear-cart" class="btn-clear">Vaciar carrito</button>
+    <div id="cart-contents" class="cart-grid">
+      <p>Tu carrito está vacío.</p>
+    </div>
+  </div>
+</div>
+<div id="product-info"
+     data-alias="{{ .Params.Alias }}"
+     data-title="{{ .Title }}"
+     data-price="{{ with .Params.price.COP }}{{ . }}{{ else }}0{{ end }}"
+     data-image="{{.RelPermalink}}{{.Params.Image }}">
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Imagen + Ribbon -->
+    <div class="producto-imagen">
+        <img id="mainImage" src="{{ .Params.Image }}" alt="{{ $.Title }}">
+      <!-- Miniaturas -->
+      <div class="miniaturas">
+        <img src="/images/{{ .Title | urlize }}.webp" alt="Vista 1" onclick="document.getElementById('mainImage').src=this.src">
+        <img src="/images/{{ .Title | urlize }}-2.webp" alt="Vista 2" onclick="document.getElementById('mainImage').src=this.src">
+        <img src="/images/{{ .Title | urlize }}-3.webp" alt="Vista 3" onclick="document.getElementById('mainImage').src=this.src">
+      </div>
+    </div>
+  
+    <!-- Contenido -->
+    <div class="producto-contenido">
+      <h1>{{ .Title }}</h1>
+      <p class="descripcion">{{ .Params.description }}</p>
+  
+      <!-- Precio -->
+      {{ with .Params.price }}
+        <div class="precio">
+          {{ with .COP }}<span class="monto cop">COP {{ . }}</span>{{ end }}
+          {{ with .USD }}<span class="monto usd">USD {{ . }}</span>{{ end }}
+        </div>
+      {{ end }}
+      <div id="supabase-data" data-alias="{{ .Params.Alias }}">
+        Cargando...
+      </div>
+
+      <div class="cantidad">
+        <label for="cantidad">Cantidad:</label>
+        <input type="number" id="cantidad" name="cantidad" value="1" min="1">
+      </div>
+
+      <script type="module" src="/js/supabase.js"></script>
+
+
+<div class="acciones">
+  <a href="#comprar" class="btn btn-cta">Comprar ahora</a>
+  <button id="add-to-cart" class="btn btn-carrito">Añadir al carrito</button>
+</div>
+
+      <!-- Métricas -->, crear las metricas con params caracteristicas de los md
+      <div class="metricas">
+        <div class="metric">
+          <span class="valor">99.9%</span>
+          <span class="etiqueta">Uptime</span>
+        </div>
+        <div class="metric">
+          <span class="valor">120+</span>
+          <span class="etiqueta">Sites</span>
+        </div>
+        <div class="metric">
+          <span class="valor">24+</span>
+          <span class="etiqueta">Stack</span>
+        </div>
+        <div class="metric">
+          <span class="valor">50ms</span>
+          <span class="etiqueta">Latency</span>
+        </div>
+      </div>
+  
+      <!-- Reseñas -->
+      <div id="reseñas" class="reseñas">
+        <h2>Reseñas de clientes</h2>
+        <div class="review">
+          <p>"Excelente producto, muy fácil de configurar y funciona perfecto para IoT."</p>
+          <span>- Juan P.</span>
+        </div>
+        <div class="review">
+          <p>"La batería dura bastante y la cobertura LoRa es impresionante."</p>
+          <span>- María G.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  {{ partial "carrito.html" . }}
+<script src="/js/cart.js" defer></script>
+
+  <style>
+  /* ===== PRODUCTO VIEW ===== */
+
+  .producto-view {
+
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 40px;
+    padding: 40px;
+    background: linear-gradient(160deg, #0f1116, #1b1f2b);
+    backdrop-filter: blur(10px);
+    color: #e5e7eb;
+  }
+  
+  /* Imagen */
+  .producto-imagen {
+    position: relative;
+  }
+  .producto-imagen img {
+    width: 100%;
+    border-radius: 20px;
+    object-fit: cover;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+    transition: transform 0.3s ease;
+  }
+  .producto-imagen img:hover {
+    transform: scale(1.015);
+  }
+  
+  /* Miniaturas */
+  .miniaturas {
+    display: flex;
+    gap: 10px;
+    margin-top: 14px;
+  }
+  .miniaturas img {
+    width: 65px;
+    height: 65px;
+    object-fit: cover;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border 0.2s ease;
+  }
+  .miniaturas img:hover {
+    border: 2px solid #3b82f6;
+  }
+
+  
+  /* Contenido */
+  .producto-contenido h1 {
+    font-size: 2rem;
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 16px;
+  }
+  
+  /* Precio */
+  .precio {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 18px;
+  }
+  .precio .monto {
+    font-weight: 700;
+    padding: 6px 12px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+  .precio .cop { color: #34d399; }
+  .precio .usd { color: #60a5fa; }
+  
+  /* Cantidad */
+  .cantidad {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 22px;
+  }
+  .cantidad label {
+    font-size: 0.95rem;
+    color: #cbd5e1;
+  }
+  .cantidad input {
+    width: 70px;
+    padding: 6px 8px;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.12);
+    background: rgba(255,255,255,0.05);
+    color: #fff;
+    font-weight: 600;
+    text-align: center;
+  }
+  
+  /* Botones */
+  .acciones {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 28px;
+  }
+  .btn {
+    padding: 12px 22px;
+    border-radius: 10px;
+    font-weight: 600;
+    text-align: center;
+    transition: all 0.2s ease;
+  }
+  .btn-cta {
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+    color: #fff;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+  }
+  .btn-cta:hover {
+    opacity: 0.95;
+    transform: translateY(-1px);
+  }
+  .btn-carrito {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: #cbd5e1;
+  }
+  .btn-carrito:hover {
+    background: rgba(255,255,255,0.08);
+  }
+  
+  /* Métricas */
+  .metricas {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin-bottom: 28px;
+  }
+  .metric {
+    text-align: center;
+    padding: 18px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+  .metric .valor {
+    display: block;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #fff;
+  }
+  .metric .etiqueta {
+    font-size: 0.85rem;
+    color: #9ca3af;
+  }
+  
+  /* Reseñas */
+  .reseñas h2 {
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+    color: #fff;
+  }
+  .review {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 12px;
+    padding: 14px;
+    margin-bottom: 12px;
+  }
+  .review p {
+    font-size: 0.95rem;
+    color: #d1d5db;
+  }
+  .review span {
+    display: block;
+    margin-top: 6px;
+    font-size: 0.8rem;
+    color: #9ca3af;
+  }
+  
+  /* Responsive */
+  @media (max-width: 900px) {
+    .producto-view { grid-template-columns: 1fr; }
+    .acciones { flex-direction: column; }
+  }
+  </style>
+  
+    {{ end }}

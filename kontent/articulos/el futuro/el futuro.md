@@ -1,0 +1,3 @@
+Bueno si, creo que a la gran mayoria le da miedo el futuro, tratar de imaginar pensar y bueno sobrevivir. De eso se trata, especialmente en la desgracia de ser de esta parte del mundo.
+Creo que mi historia sera glorificada despues de la muerte, como pasa mucho y ssi, con mucho entusiasmo comprato mis conocimientos y advierto a las personas de los peligros, y de lo cruel de la vida, que tambien me ha tocado, tambien he fallado, tambien flaqueado, tambien perdido.
+Agradezco a los administradores por este espacio de divulgacion

@@ -1,0 +1,122 @@
+<a class="tarjeta-vertical" href="{{ .RelPermalink }}index.html" >
+  <article>
+    <div class="imagen-wrapper">
+      {{ with .Resources.GetMatch .Params.image }}
+        <img src="{{ .RelPermalink }}" alt="{{ $.Title }}">
+      {{ else }}
+        <img src="../images/{{ $.Title | urlize }}.webp" alt="{{ $.Title }}">
+      {{ end }}
+
+      <div class="ribbon">
+        {{ with .Params.authors }}
+          {{ . }}
+        {{ else }}
+          {{ index .Params.categoria 0 }}
+        {{ end }}
+      </div>
+    </div>
+      
+    <div class="contenido">
+      <h2>{{ .Title }}</h2>
+      <p class="tarjeta-resumen">{{ .Params.description }}</p>
+
+      <div class="caracteristicas">
+        {{ with .Params.categories }}
+          {{ range . }}
+            <p>{{ . }}</p>
+          {{ end }}
+        {{ else }}
+          {{ with .Params.caracteristicas }}
+            {{ range . }}
+              <p>{{ . }}</p>
+            {{ end }}
+          {{ end }}
+        {{ end }}
+      </div>
+
+      {{ with .Params.price }}
+      <div class="precio">
+        {{ with .COP }}
+          <p>COP: {{ . }}</p>
+        {{ end }}
+        {{ with .USD }}
+          <p>USD: {{ . }}</p>
+        {{ end }}
+      </div>
+      {{ end }}
+    </div>
+  </article>
+</a>
+
+<style>
+
+
+.tarjeta-vertical {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;     /* 👈 se adapta al alto de la celda */
+  overflow: hidden;
+  border-radius: 20px;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.28);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+}
+.tarjeta-vertical:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 22px rgba(0,208,255,0.18); /* sutil */
+  border-color: rgba(0,208,255,0.4);
+}
+.imagen-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.imagen-wrapper img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+.ribbon {
+  position: absolute;
+  left: 12px;
+  top: 12px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  background: rgba(0, 208, 255, 0.12);
+  border: 1px solid rgba(0,208,255,0.3);
+  backdrop-filter: blur(8px);
+  color: #00d0ff;
+}
+.contenido{
+  padding: 0px 10px;
+  margin-top: 20px;
+}
+.tarjeta-resumen{
+  font-size: 14px;
+}
+.caracteristicas{
+  display: flex;
+  gap: 0px 15px;
+  flex-wrap: wrap;
+}
+.caracteristicas p{
+  font-size: 0.75rem;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.05);
+  color: #e0f7ff;
+}
+.precio{
+  font-size: 30px;
+  font-family: 'Orbitron', sans-serif;
+}
+</style>

@@ -1,0 +1,47 @@
+{{ $author := .Params.authors }}
+{{ $authorKey := .Params.authors | urlize }}
+
+<div class="card-author">
+  {{ range site.Data.colaboradores }}
+    {{ if eq (lower .nombre) (lower $author) }}
+      <img src="/images/{{ $authorKey }}.webp" alt="{{ $author }}">
+      <div class="author-info">
+        <h4 class="author-name">{{ $author }} - {{ .rol }}</h4>
+
+        {{ with .redes_sociales }}
+          <div class="author-socials">
+            {{ range $name, $url := . }}
+              {{ if $url }}
+                <a href="https://{{ $url }}" target="_blank" rel="noopener noreferrer">
+                  {{ $name | title }}
+                </a>
+              {{ end }}
+            {{ end }}
+          </div>
+        {{ end }}
+
+      </div>
+    {{ end }}
+  {{ end }}
+</div>
+
+
+<style>
+
+.card-author {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  margin-bottom: 15px;
+
+}
+.card-author img {
+  border: 2px solid blue;
+  width: 60px!important;
+  height: 60px!important;
+  border-radius: 50%!important;
+  object-fit: cover!important;
+  flex-shrink: 0!important;
+}
+
+</style>

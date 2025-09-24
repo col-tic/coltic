@@ -1,0 +1,83 @@
+:root{
+  --bg: #0f1724;
+  --muted: rgba(226,232,240,0.65);
+  --glass: rgba(255,255,255,0.03);
+  --accent-grad: linear-gradient(90deg,#06b6d4,#7c3aed);
+  --card: rgba(255,255,255,0.025);
+  --radius: 14px;
+  --max-width: 1100px;
+  --glass-border: rgba(255,255,255,0.06);
+}
+main{
+  display: flex;
+  flex-direction: column;
+  margin: 110px auto 60px;
+  max-width: 1200px;
+  gap: 32px;
+  padding: 20px;
+}
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+}    
+body{
+  font-family:"Segoe UI",Tahoma,Geneva,Verdana,sans-serif;
+  color:#f3f4f6;
+}
+:root {
+  --azul: rgb(30, 190, 230);
+}
+
+.gridx3 {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  align-items: stretch; /* 👈 fuerza a que las celdas de cada fila midan igual de alto */
+}
+
+a {
+  text-decoration: none /* subrayado */
+}
+ul, ol {
+  list-style-position: inside; /* Mueve las viñetas dentro */
+  padding-left: 0; /* Ajusta si no quieres tanto margen extra */
+}
+
+@media (max-width: 940px) {
+  main{
+    margin: 160px auto 60px;
+  }
+  .gridx3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 630px) {
+  .gridx3 {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+h2{
+  color: #cfe1f7;
+}
+p{
+  margin: 0 0 16px;
+  color: #cfe1f7;
+  line-height: 1.7;
+}
+h3{
+  color: var(--muted);
+  font-size: 1rem;
+}
+.titulos-generales{
+  display: inline-block;
+  font-size: 0.75rem;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.06);
+  color: #a5f3fc;
+  border: 1px solid rgba(255,255,255,0.1);
+  margin-bottom: 1rem;
+}
