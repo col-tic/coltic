@@ -1,3 +1,12 @@
 User-agent: *
 Allow: /
-Sitemap: /sitemap.xml
+
+
+Sitemap: https://col-tic.github.io/coltic/sitemap.xml
+
+Crawl-delay: 10
+
+# Notas SEO adicionales
+# - Todos los enlaces importantes y páginas públicas son rastreables
+# - Se bloquean solo recursos que no aportan contenido relevante
+# - Mejora la eficiencia del rastreo y la indexación
