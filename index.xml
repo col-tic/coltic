@@ -1,11 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>hola on COLTIC</title>
-    <link>/</link>
-    <description>Recent content in hola on COLTIC</description>
+    <title>Hola en COLTIC – Soluciones Digitales Profesionales</title>
+    <link>https://col-tic.github.io/coltic/</link>
+    <description>
+Diseño profesional
+Desarrollamos sitios web, software a medida y tiendas e-commerce con diseños únicos, funcionales y atractivos, que mejoran la experiencia del usuario y fortalecen tu marca.
+
+Marketing efectivo
+Gestionamos campañas de publicidad en Meta Ads para aumentar tu visibilidad, generar leads y potenciar las ventas de tu negocio de forma medible y estratégica.
+
+Conectando territorios
+Unimos tu negocio con clientes de la región mediante posicionamiento digital, ubicación en mapas y búsquedas en Internet, logrando una expansión orgánica y aumentando tu visibilidad local y regional.
+    </description>
+    <language>es-CO</language>
     <generator>Hugo</generator>
-    <language>es-co</language>
-    <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 26 Dec 2025 15:00:00 +0000</lastBuildDate>
+    <ttl>60</ttl>
+    <atom:link href="https://col-tic.github.io/coltic/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
