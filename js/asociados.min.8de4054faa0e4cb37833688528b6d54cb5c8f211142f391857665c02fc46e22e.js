@@ -1,0 +1,1 @@
+const track=document.getElementById("asociadosTrack");function fillCarousel(){const t=Array.from(track.children);let e=track.scrollWidth;const n=track.parentElement.offsetWidth;for(;e<n*2;)t.forEach(e=>{track.appendChild(e.cloneNode(!0))}),e=track.scrollWidth}fillCarousel(),window.addEventListener("resize",fillCarousel)

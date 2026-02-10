@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Servicios on COLTIC</title>
+    <link>/articulos/</link>
+    <description>Recent content in Servicios on COLTIC</description>
+    <generator>Hugo</generator>
+    <language>es</language>
+    <lastBuildDate>Mon, 01 Jan 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/articulos/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>¿Cómo digitalizo mi negocio?</title>
+      <link>/articulos/digitalizar-negocio/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>/articulos/digitalizar-negocio/</guid>
+      <description>&lt;p&gt;¿Cómo digitalizo mi negocio?&lt;/p&gt;&#xA;&lt;p&gt;Hoy, cuando una persona necesita un producto o servicio, lo primero que hace es buscar en internet.&lt;br&gt;&#xA;Si tu negocio no aparece ahí, para ese cliente &lt;strong&gt;no existe&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Digitalizar un negocio no significa “tener redes”.&lt;br&gt;&#xA;Significa &lt;strong&gt;tener control sobre tu presencia, tu información y tu captación de clientes&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;h3 id=&#34;qué-significa-digitalizar-un-negocio&#34;&gt;¿Qué significa digitalizar un negocio?&lt;/h3&gt;&#xA;&lt;p&gt;En términos simples:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Tener un punto central donde explicas qué haces&lt;/li&gt;&#xA;&lt;li&gt;Permitir que te encuentren sin depender del boca a boca&lt;/li&gt;&#xA;&lt;li&gt;Reducir fricción para que un cliente te contacte o compre&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;En la práctica, esto se traduce en una web clara, rápida y bien estructurada, pensada para personas reales, no para “verse bonita”.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Crear una página web no es difícil, hacerla rentable sí</title>
+      <link>/articulos/paginas-webs/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>/articulos/paginas-webs/</guid>
+      <description>&lt;p&gt;Crear un sitio web hoy no es una habilidad diferencial.&lt;br&gt;&#xA;Publicarlo tampoco.&lt;/p&gt;&#xA;&lt;p&gt;La diferencia real está en &lt;strong&gt;entender qué problema resuelve&lt;/strong&gt; y &lt;strong&gt;cómo genera dinero&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;La mayoría no falla por falta de herramientas, falla por &lt;strong&gt;no entender estructura, objetivos y control&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;h3 id=&#34;publicar-no-es-construir&#34;&gt;Publicar no es construir&lt;/h3&gt;&#xA;&lt;p&gt;Cualquiera puede hacer esto:&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code&gt;npx create-react-app mi-web&#xA;npm start&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;O algo peor:&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code&gt;&amp;lt;div&amp;gt;&#xA;  &amp;lt;h1&amp;gt;Mi negocio&amp;lt;/h1&amp;gt;&#xA;  &amp;lt;p&amp;gt;Vendemos calidad&amp;lt;/p&amp;gt;&#xA;&amp;lt;/div&amp;gt;&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;Eso no es una web funcional. Es contenido sin jerarquía ni propósito.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>La estructura HTML que separa una web amateur de una profesional</title>
+      <link>/articulos/escritura-html/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>/articulos/escritura-html/</guid>
+      <description>&lt;p&gt;Entonces, volviendo al tema.&lt;/p&gt;&#xA;&lt;p&gt;Cuando usted crea su sitio web, debe saber, al menos, lo básico.&lt;br&gt;&#xA;Y lo básico no es diseño ni colores.&lt;br&gt;&#xA;Lo básico es la &lt;strong&gt;estructura HTML&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Entiéndalo así:&lt;br&gt;&#xA;todo documento web comienza exactamente igual.&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &amp;lt;!DOCTYPE html&amp;gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &amp;lt;html lang&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;es&amp;#34;&lt;/span&gt;&amp;gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Esa línea le dice al navegador que está leyendo HTML moderno y que debe interpretarlo correctamente.&lt;/p&gt;&#xA;&lt;p&gt;Dentro del documento existen dos macro secciones fundamentales:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;head&lt;/li&gt;&#xA;&lt;li&gt;body&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Ejemplo mínimo y funcional:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
