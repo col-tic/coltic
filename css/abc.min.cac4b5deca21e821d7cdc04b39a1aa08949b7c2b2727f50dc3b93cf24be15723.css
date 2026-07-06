@@ -1,0 +1,1 @@
+.abc-list{display:flex;flex-direction:column;gap:3.5rem;margin-top:3rem}.abc-container{display:flex;align-items:center;gap:2.5rem}.letra{font-family:anton sc,sans-serif;font-size:68pt;line-height:1;color:#fff}.abc-container:nth-child(even){flex-direction:row-reverse}@media(max-width:800px){.abc-container{flex-direction:row;text-align:left}.letra{order:0}.card{order:1}}

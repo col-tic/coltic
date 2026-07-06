@@ -1,0 +1,23 @@
+# COLTIC
+
+> Coltic diseña y mantiene sitios web, menús digitales y webapps para negocios en Colombia con enfoque internacional. Servicios por pago único o mensual, con SEO real, posicionamiento en Google/Google Maps y conversión directa a WhatsApp incluidos.
+
+Coltic combina diseño, tecnología y marketing digital (fotografía, redes sociales, ads en Meta y TikTok) bajo una misma estrategia. Presencia activa en Norte de Santander y Bogotá, Colombia, con clientes internacionales y pagos cripto-friendly (Binance Pay, Bitcoin).
+
+## Servicios
+
+- [Landing Page](https://coltic.site/servicios/#landing): sitio de una página, $69.000 COP pago único, incluye diseño, vectorización de marca, conversión a WhatsApp y SEO en Google. Página adicional $19.900 COP. Dominio no incluido.
+- [Menús Digitales](https://coltic.site/servicios/#menus): menú digital sin fricción para restaurantes/negocios físicos, desde $49.900 COP.
+- [WebApps](https://coltic.site/servicios/#webapps): proyectos a medida con lógica propia, paneles y herramientas internas, cotización personalizada.
+- [Guidapp](https://guidapp.colti.site): directorio en vivo de proyectos reales entregados por Coltic, con enlace a cada sitio.
+
+## Empresa
+
+- [Nosotros](https://coltic.site/nosotros/): historia, trayectoria, presencia en Colombia y métodos de pago aceptados.
+- [Artículos](https://coltic.site/articulos/): blog con contenido sobre marketing digital y presencia web.
+- [Políticas](https://coltic.site/politicas/): privacidad, términos y condiciones, cookies.
+
+## Contacto
+
+- WhatsApp: enlace directo disponible en todas las páginas del sitio (botón flotante).
+- Sitio: https://coltic.site

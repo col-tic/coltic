@@ -1,0 +1,1 @@
+.nuestro-camino{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto;gap:clamp(2.5rem,5vw,5rem)clamp(2rem,5vw,4rem);width:100%;margin-top:clamp(3rem,6vw,5rem)}.camino-cuadrante>*{margin-top:0}@media(max-width:900px){.nuestro-camino{grid-template-columns:1fr}}

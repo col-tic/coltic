@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>COLTIC — Diseño web, menús digitales y webapps en Colombia on COLTIC</title>
+		<link>https://coltic.site/</link>
+		<description>Recent content in COLTIC — Diseño web, menús digitales y webapps en Colombia on COLTIC</description>
+		<generator>Hugo</generator>
+		<language>es-CO</language>
+		
+		
+		
+		
+			<lastBuildDate>Mon, 01 Jan 2024 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://coltic.site/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Nosotros</title>
+				<link>https://coltic.site/nosotros/</link>
+				<pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+				<guid>https://coltic.site/nosotros/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Servicios</title>
+				<link>https://coltic.site/servicios/</link>
+				<pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+				<guid>https://coltic.site/servicios/</guid>
+				<description></description>
+			</item>
+	</channel>
+</rss>
